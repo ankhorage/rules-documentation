@@ -39,6 +39,18 @@ describe('documentation rules', () => {
     ]);
   });
 
+  test('publishes complete fact-collection metadata for consumers', () => {
+    expect(DOCUMENTATION_RULE_METADATA.paths.usageRoots).toEqual(['examples', 'src/cli']);
+    expect(DOCUMENTATION_RULE_METADATA.readmeUsage.requiredTags).toEqual([
+      'usage',
+      'readme',
+      'title',
+    ]);
+    expect(DOCUMENTATION_RULE_METADATA.config.path).toBe('src/types/config.ts');
+    expect(DOCUMENTATION_RULE_METADATA.see.protocol).toBe('https:');
+    expect(DOCUMENTATION_RULE_METADATA.security.exactTestNameRequired).toBe(true);
+  });
+
   test('accepts canonical documentation evidence', () => {
     expect(evaluateDocumentation(createCanonicalContext())).toEqual({
       diagnostics: [],
