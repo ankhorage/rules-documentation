@@ -114,11 +114,8 @@ function configReadmeMetadataRule(): Rule<DocumentationRuleContext> {
   );
 }
 
-
 /*** Return whether a comment owns @config on a canonical type-like declaration target. */
-function hasConfigDeclarationTag(
-  comment: DocumentationRuleContext['comments'][number],
-): boolean {
+function hasConfigDeclarationTag(comment: DocumentationRuleContext['comments'][number]): boolean {
   return documentationRuleSupport
     .tags(comment, 'config')
     .some((tag) => tag.target === 'interface' || tag.target === 'type');
