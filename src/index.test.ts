@@ -73,6 +73,51 @@ describe('documentation finding evidence', () => {
   });
 });
 
+describe('metadata parity', () => {
+  test('rejects duplicate README usage title tags', () => {
+    const result = evaluateDocumentation({
+      ...emptyContext,
+      comments: [
+        {
+          description: 'Usage description.',
+          hasCodeBlock: false,
+          path: 'examples/basic/index.ts',
+          tags: [
+            { name: 'usage', target: 'block' },
+            { name: 'readme', target: 'block' },
+            { name: 'title', target: 'block', value: 'First' },
+            { name: 'title', target: 'block', value: 'Second' },
+          ],
+        },
+      ],
+    });
+    expect(result.findings.map(({ ruleId }) => ruleId)).toContain(
+      'documentation.usage.readme.metadata',
+    );
+  });
+
+  test('rejects credentialed HTTPS values as @see syntax errors', () => {
+    const result = evaluateDocumentation({
+      ...emptyContext,
+      comments: [
+        {
+          description: 'Reference.',
+          hasCodeBlock: false,
+          path: 'src/reference.ts',
+          tags: [
+            {
+              name: 'see',
+              target: 'symbol',
+              value: 'https://user:secret@example.com/docs',
+            },
+          ],
+        },
+      ],
+    });
+    expect(result.findings.map(({ ruleId }) => ruleId)).toContain('documentation.see.value');
+  });
+});
+
 describe('configuration documentation activation', () => {
   test('rejects config roots on non-type declaration targets', () => {
     const result = evaluateDocumentation({

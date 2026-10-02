@@ -11,6 +11,7 @@ import type {
 export const documentationRuleSupport = {
   createRule,
   finding,
+  hasExactlyOneTag,
   hasNonEmptyTagValue,
   hasTag,
   isCliPath,
@@ -63,6 +64,11 @@ function hasTag(comment: DocumentationCommentFact, name: string): boolean {
   return tags(comment, name).length > 0;
 }
 
+/*** Return whether a comment contains exactly one raw tag name. */
+function hasExactlyOneTag(comment: DocumentationCommentFact, name: string): boolean {
+  return tags(comment, name).length === 1;
+}
+
 /*** Return whether a comment contains one tag with non-empty text. */
 function hasNonEmptyTagValue(comment: DocumentationCommentFact, name: string): boolean {
   return tags(comment, name).some((tag) => (tag.value?.trim() ?? '') !== '');
@@ -84,7 +90,13 @@ function isCliPath(path: string): boolean {
 function isHttpsUrl(value: string | undefined): boolean {
   if (value === undefined || value.trim() === '') return false;
   try {
-    return new URL(value).protocol === 'https:';
+    const url = new URL(value);
+    return (
+      url.protocol === 'https:' &&
+      url.hostname.length > 0 &&
+      url.username.length === 0 &&
+      url.password.length === 0
+    );
   } catch {
     return false;
   }
