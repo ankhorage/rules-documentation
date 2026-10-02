@@ -1,5 +1,12 @@
 # @ankhorage/rules-documentation
 
+## 0.3.2
+
+### Patch Changes
+
+- a6e16d3: Preserve configuration documentation opt-in when the canonical src/types/config.ts file exists,
+  even before an @config tag is added.
+
 ## 0.3.1
 
 ### Patch Changes

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.3.1",
+      "value": "v0.3.2",
       "color": "cb3837"
     },
     {
@@ -927,7 +927,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
-        "line": 94,
+        "line": 96,
         "column": 1
       }
     },
@@ -938,7 +938,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
-        "line": 121,
+        "line": 123,
         "column": 1
       }
     },
@@ -1147,7 +1147,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 113,
+        "line": 125,
         "column": 1
       }
     },
@@ -1158,7 +1158,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 152,
+        "line": 164,
         "column": 1
       }
     }
