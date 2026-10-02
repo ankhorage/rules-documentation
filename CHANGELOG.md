@@ -1,5 +1,12 @@
 # @ankhorage/rules-documentation
 
+## 0.3.3
+
+### Patch Changes
+
+- 194c92d: Preserve exact required-tag cardinality for README-promoted documentation and reject credentialed
+  or hostless HTTPS values as @see syntax errors.
+
 ## 0.3.2
 
 ### Patch Changes

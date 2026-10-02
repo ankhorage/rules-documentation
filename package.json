@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/rules-documentation",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Documentation rule provider for Ankhorage source and generated documentation.",
   "keywords": [
     "ankhorage",

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.3.2",
+      "value": "v0.3.3",
       "color": "cb3837"
     },
     {
@@ -938,7 +938,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
-        "line": 123,
+        "line": 126,
         "column": 1
       }
     },
@@ -1059,7 +1059,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 23,
+        "line": 24,
         "column": 1
       }
     },
@@ -1070,7 +1070,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 38,
+        "line": 39,
         "column": 1
       }
     },
@@ -1081,7 +1081,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 57,
+        "line": 58,
         "column": 1
       }
     },
@@ -1092,7 +1092,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 62,
+        "line": 63,
+        "column": 1
+      }
+    },
+    {
+      "name": "hasExactlyOneTag",
+      "description": "Return whether a comment contains exactly one raw tag name.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 68,
         "column": 1
       }
     },
@@ -1103,7 +1114,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 67,
+        "line": 73,
         "column": 1
       }
     },
@@ -1114,7 +1125,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 72,
+        "line": 78,
         "column": 1
       }
     },
@@ -1125,7 +1136,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 78,
+        "line": 84,
         "column": 1
       }
     },
@@ -1136,7 +1147,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 84,
+        "line": 90,
         "column": 1
       }
     },
@@ -1147,7 +1158,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 125,
+        "line": 170,
         "column": 1
       }
     },
@@ -1158,7 +1169,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 164,
+        "line": 209,
         "column": 1
       }
     }
@@ -1463,6 +1474,12 @@
         "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
       },
       {
+        "fromSymbol": "hasExactlyOneTag",
+        "toSymbol": "tags",
+        "callExpression": "tags",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
+      },
+      {
         "fromSymbol": "hasNonEmptyTagValue",
         "toSymbol": "tags",
         "callExpression": "tags",
@@ -1544,6 +1561,12 @@
         "fromSymbol": "configReadmeMetadataRule",
         "toSymbol": "createRule",
         "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toSymbol": "hasExactlyOneTag",
+        "callExpression": "documentationRuleSupport.hasExactlyOneTag",
         "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
       },
       {
@@ -1700,6 +1723,12 @@
         "fromSymbol": "usageReadmeMetadataRule",
         "toSymbol": "createRule",
         "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toSymbol": "hasExactlyOneTag",
+        "callExpression": "documentationRuleSupport.hasExactlyOneTag",
         "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
       },
       {
