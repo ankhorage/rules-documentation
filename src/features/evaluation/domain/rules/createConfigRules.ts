@@ -65,11 +65,13 @@ function configReadmeUniqueRule(): Rule<DocumentationRuleContext> {
   return documentationRuleSupport.createRule(
     DOCUMENTATION_RULE_IDS.configReadmeUnique,
     'Configuration documentation has one README root.',
-    ({ comments }) => {
+    ({ comments, files }) => {
       const configs = comments.filter((comment) =>
         documentationRuleSupport.hasTag(comment, 'config'),
       );
-      if (configs.length === 0) return [];
+      const active =
+        files.includes(DOCUMENTATION_RULE_METADATA.paths.configSchema) || configs.length > 0;
+      if (!active) return [];
       const promoted = configs.filter(
         (comment) =>
           comment.path === DOCUMENTATION_RULE_METADATA.paths.configSchema &&

@@ -71,7 +71,9 @@ describe('documentation finding evidence', () => {
         ?.sourceLocation,
     ).toEqual({ line: 44, path: 'src/example.ts' });
   });
+});
 
+describe('configuration documentation activation', () => {
   test('rejects config roots on non-type declaration targets', () => {
     const result = evaluateDocumentation({
       ...emptyContext,
@@ -87,6 +89,16 @@ describe('documentation finding evidence', () => {
           ],
         },
       ],
+      files: ['src/types/config.ts'],
+    });
+    expect(result.findings.map(({ ruleId }) => ruleId)).toContain(
+      'documentation.config.readme.unique',
+    );
+  });
+
+  test('treats the canonical config file as configuration documentation opt-in', () => {
+    const result = evaluateDocumentation({
+      ...emptyContext,
       files: ['src/types/config.ts'],
     });
     expect(result.findings.map(({ ruleId }) => ruleId)).toContain(
