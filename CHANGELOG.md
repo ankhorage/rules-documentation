@@ -1,5 +1,12 @@
 # @ankhorage/rules-documentation
 
+## 0.2.0
+
+### Minor Changes
+
+- cf637ca: Expose the complete canonical documentation metadata required by fact collectors and renderers,
+  including usage, config, comment, @see, and @security contracts.
+
 ## 0.1.0
 
 ### Minor Changes

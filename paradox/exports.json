@@ -33,7 +33,7 @@
   {
     "name": "DOCUMENTATION_RULE_METADATA",
     "title": null,
-    "description": "Canonical documentation metadata shared by fact collectors and rules.",
+    "description": "Canonical documentation metadata shared by fact collectors, renderers, and rules.",
     "isReadme": false,
     "see": [],
     "security": [],

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.1.0",
+      "value": "v0.2.0",
       "color": "cb3837"
     },
     {
@@ -281,7 +281,7 @@
     {
       "name": "DOCUMENTATION_RULE_METADATA",
       "title": null,
-      "description": "Canonical documentation metadata shared by fact collectors and rules.",
+      "description": "Canonical documentation metadata shared by fact collectors, renderers, and rules.",
       "isReadme": false,
       "see": [],
       "security": [],
@@ -1122,7 +1122,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 65,
+        "line": 77,
         "column": 1
       }
     },
@@ -1133,7 +1133,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 104,
+        "line": 116,
         "column": 1
       }
     }

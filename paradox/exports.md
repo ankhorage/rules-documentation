@@ -19,7 +19,7 @@ Kind: `value`
 Module: `src/constants/documentation.ts`
 Source: `src/constants/documentation.ts:4:14`
 
-Canonical documentation metadata shared by fact collectors and rules.
+Canonical documentation metadata shared by fact collectors, renderers, and rules.
 
 ## DocumentationCommentFact
 
