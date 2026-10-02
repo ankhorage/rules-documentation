@@ -71,7 +71,6 @@ describe('documentation finding evidence', () => {
         ?.sourceLocation,
     ).toEqual({ line: 44, path: 'src/example.ts' });
   });
-
 });
 
 describe('configuration documentation activation', () => {
