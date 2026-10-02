@@ -4,7 +4,11 @@ import type { RuleEvaluationResult, RulesConfig } from '@ankhorage/rules';
 export type DocumentationTagTarget = 'block' | 'interface' | 'symbol' | 'type';
 
 /*** Canonical value shapes supported by documentation metadata. */
-export type DocumentationTagValueKind = 'colocated-test-reference' | 'non-empty-text' | 'none' | 'public-https-url';
+export type DocumentationTagValueKind =
+  | 'colocated-test-reference'
+  | 'non-empty-text'
+  | 'none'
+  | 'public-https-url';
 
 /*** Canonical documentation tag names. */
 export type DocumentationTagName = 'config' | 'readme' | 'security' | 'see' | 'title' | 'usage';

@@ -1,9 +1,4 @@
-import type {
-  JsonValue,
-  Rule,
-  RuleFinding,
-  RuleSeverity,
-} from '@ankhorage/rules';
+import type { JsonValue, Rule, RuleFinding, RuleSeverity } from '@ankhorage/rules';
 
 import { DOCUMENTATION_RULE_METADATA } from '../../../constants/documentation.js';
 import type {
