@@ -102,7 +102,10 @@ function configReadmeMetadataRule(): Rule<DocumentationRuleContext> {
         comment.path === DOCUMENTATION_RULE_METADATA.paths.configSchema &&
         hasConfigDeclarationTag(comment) &&
         documentationRuleSupport.hasTag(comment, 'readme') &&
-        (!documentationRuleSupport.hasNonEmptyTagValue(comment, 'title') ||
+        (!DOCUMENTATION_RULE_METADATA.config.requiredTags.every((name) =>
+          documentationRuleSupport.hasExactlyOneTag(comment, name),
+        ) ||
+          !documentationRuleSupport.hasNonEmptyTagValue(comment, 'title') ||
           comment.description.trim() === '')
           ? [
               documentationRuleSupport.finding(

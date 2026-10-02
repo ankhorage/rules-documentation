@@ -104,7 +104,10 @@ function usageReadmeMetadataRule(): Rule<DocumentationRuleContext> {
         documentationRuleSupport.isExamplePath(comment.path) &&
         documentationRuleSupport.hasTag(comment, 'usage') &&
         documentationRuleSupport.hasTag(comment, 'readme') &&
-        (!documentationRuleSupport.hasNonEmptyTagValue(comment, 'title') ||
+        (!DOCUMENTATION_RULE_METADATA.readmeUsage.requiredTags.every((name) =>
+          documentationRuleSupport.hasExactlyOneTag(comment, name),
+        ) ||
+          !documentationRuleSupport.hasNonEmptyTagValue(comment, 'title') ||
           comment.description.trim() === '')
           ? [
               documentationRuleSupport.finding(
