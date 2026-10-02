@@ -94,6 +94,16 @@ describe('documentation finding evidence', () => {
     );
   });
 
+  test('treats the canonical config file as configuration documentation opt-in', () => {
+    const result = evaluateDocumentation({
+      ...emptyContext,
+      files: ['src/types/config.ts'],
+    });
+    expect(result.findings.map(({ ruleId }) => ruleId)).toContain(
+      'documentation.config.readme.unique',
+    );
+  });
+
   test('reports violations as generic Rules findings', () => {
     const result = evaluateDocumentation(createInvalidContext());
     const ruleIds = result.findings.map(({ ruleId }) => ruleId);
