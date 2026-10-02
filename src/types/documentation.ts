@@ -29,6 +29,7 @@ export interface DocumentationTagFact {
 export interface DocumentationCommentFact {
   readonly description: string;
   readonly hasCodeBlock: boolean;
+  readonly line?: number;
   readonly path: string;
   readonly tags: readonly DocumentationTagFact[];
 }
@@ -36,6 +37,7 @@ export interface DocumentationCommentFact {
 /*** One public function whose description is evaluated independently of parser technology. */
 export interface DocumentationPublicFunctionFact {
   readonly description: string;
+  readonly line?: number;
   readonly name: string;
   readonly path: string;
 }

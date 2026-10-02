@@ -51,6 +51,8 @@ function configLocationRule(): Rule<DocumentationRuleContext> {
                 '@config is allowed only in src/types/config.ts.',
                 comment.path,
                 {},
+                'error',
+                comment.line,
               ),
             ]
           : [],
@@ -105,6 +107,8 @@ function configReadmeMetadataRule(): Rule<DocumentationRuleContext> {
                 'The README configuration root requires @title and non-empty prose.',
                 comment.path,
                 {},
+                'error',
+                comment.line,
               ),
             ]
           : [],

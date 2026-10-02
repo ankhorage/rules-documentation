@@ -20,6 +20,7 @@ export function createDescriptionRules(): readonly Rule<DocumentationRuleContext
                   fn.path,
                   { name: fn.name },
                   'warning',
+                  fn.line,
                 ),
               ]
             : [],
