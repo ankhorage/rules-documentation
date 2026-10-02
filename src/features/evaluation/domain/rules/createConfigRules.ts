@@ -21,9 +21,7 @@ function configFileRule(): Rule<DocumentationRuleContext> {
     DOCUMENTATION_RULE_IDS.configFile,
     'Configuration documentation uses src/types/config.ts.',
     ({ comments, files }) => {
-      const active = comments.some((comment) =>
-        documentationRuleSupport.hasTag(comment, 'config'),
-      );
+      const active = comments.some((comment) => documentationRuleSupport.hasTag(comment, 'config'));
       return active && !files.includes(DOCUMENTATION_RULE_METADATA.paths.configSchema)
         ? [
             documentationRuleSupport.finding(
