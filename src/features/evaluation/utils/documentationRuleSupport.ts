@@ -41,6 +41,7 @@ function finding(
   path: string,
   evidence: JsonValue,
   severity: RuleSeverity = 'error',
+  line?: number,
 ): RuleFinding {
   return {
     evidence,
@@ -48,6 +49,7 @@ function finding(
     ruleId,
     severity,
     subjects: [{ id: path, kind: 'documentation-source', path }],
+    ...(line === undefined ? {} : { sourceLocation: { line, path } }),
   };
 }
 

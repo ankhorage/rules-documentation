@@ -57,6 +57,20 @@ describe('documentation rules', () => {
       findings: [],
     });
   });
+});
+
+describe('documentation finding evidence', () => {
+  test('preserves source locations on provider findings', () => {
+    const result = evaluateDocumentation(createInvalidContext());
+    expect(
+      result.findings.find(({ ruleId }) => ruleId === 'documentation.comment.code-block')
+        ?.sourceLocation,
+    ).toEqual({ line: 42, path: 'src/example.ts' });
+    expect(
+      result.findings.find(({ ruleId }) => ruleId === 'documentation.public-function.description')
+        ?.sourceLocation,
+    ).toEqual({ line: 44, path: 'src/example.ts' });
+  });
 
   test('reports violations as generic Rules findings', () => {
     const result = evaluateDocumentation(createInvalidContext());
@@ -120,6 +134,7 @@ function createInvalidContext(): DocumentationRuleContext {
       {
         description: '',
         hasCodeBlock: true,
+        line: 42,
         path: 'src/example.ts',
         tags: [
           { name: 'usage', target: 'symbol' },
@@ -128,6 +143,6 @@ function createInvalidContext(): DocumentationRuleContext {
         ],
       },
     ],
-    publicFunctions: [{ description: '', name: 'example', path: 'src/example.ts' }],
+    publicFunctions: [{ description: '', line: 44, name: 'example', path: 'src/example.ts' }],
   };
 }

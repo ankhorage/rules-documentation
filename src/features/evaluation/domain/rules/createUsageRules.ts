@@ -31,6 +31,8 @@ function usageLocationRule(): Rule<DocumentationRuleContext> {
                 '@usage is allowed only below examples/** or src/cli/**.',
                 comment.path,
                 {},
+                'error',
+                comment.line,
               ),
             ]
           : [],
@@ -83,6 +85,8 @@ function usageReadmeCliRule(): Rule<DocumentationRuleContext> {
                 '@usage and @readme must not be combined below src/cli/**.',
                 comment.path,
                 {},
+                'error',
+                comment.line,
               ),
             ]
           : [],
@@ -108,6 +112,8 @@ function usageReadmeMetadataRule(): Rule<DocumentationRuleContext> {
                 'README-promoted usage requires @title and non-empty prose.',
                 comment.path,
                 {},
+                'error',
+                comment.line,
               ),
             ]
           : [],

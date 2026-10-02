@@ -54,6 +54,8 @@ function seeReachableRule(): Rule<DocumentationRuleContext> {
                   '@see URL is not confirmed as a reachable public resource.',
                   comment.path,
                   { url: tag.value ?? '' },
+                  'error',
+                  comment.line,
                 ),
               ];
         }),
@@ -83,6 +85,8 @@ function securityReferenceRule(): Rule<DocumentationRuleContext> {
                   '@security must reference exactly one executable test colocated with the documented source.',
                   comment.path,
                   { reference: value },
+                  'error',
+                  comment.line,
                 ),
               ];
         }),

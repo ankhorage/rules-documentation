@@ -23,6 +23,8 @@ export function createCommentRules(): readonly Rule<DocumentationRuleContext>[] 
                     `Unsupported documentation tag @${tag.name}.`,
                     comment.path,
                     { tag: tag.name },
+                    'error',
+                    comment.line,
                   ),
                 ],
           ),
@@ -40,6 +42,8 @@ export function createCommentRules(): readonly Rule<DocumentationRuleContext>[] 
                   'Documentation comments must reference real source examples instead of embedding code blocks.',
                   comment.path,
                   {},
+                  'error',
+                  comment.line,
                 ),
               ]
             : [],
