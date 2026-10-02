@@ -57,7 +57,6 @@ describe('documentation rules', () => {
       findings: [],
     });
   });
-
 });
 
 describe('documentation finding evidence', () => {
