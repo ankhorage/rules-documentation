@@ -58,6 +58,9 @@ describe('documentation rules', () => {
     });
   });
 
+});
+
+describe('documentation finding evidence', () => {
   test('preserves source locations on provider findings', () => {
     const result = evaluateDocumentation(createInvalidContext());
     expect(
@@ -65,9 +68,8 @@ describe('documentation rules', () => {
         ?.sourceLocation,
     ).toEqual({ line: 42, path: 'src/example.ts' });
     expect(
-      result.findings.find(
-        ({ ruleId }) => ruleId === 'documentation.public-function.description',
-      )?.sourceLocation,
+      result.findings.find(({ ruleId }) => ruleId === 'documentation.public-function.description')
+        ?.sourceLocation,
     ).toEqual({ line: 44, path: 'src/example.ts' });
   });
 
@@ -142,8 +144,6 @@ function createInvalidContext(): DocumentationRuleContext {
         ],
       },
     ],
-    publicFunctions: [
-      { description: '', line: 44, name: 'example', path: 'src/example.ts' },
-    ],
+    publicFunctions: [{ description: '', line: 44, name: 'example', path: 'src/example.ts' }],
   };
 }
