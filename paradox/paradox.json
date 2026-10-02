@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.3.0",
+      "value": "v0.3.1",
       "color": "cb3837"
     },
     {
@@ -927,7 +927,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
-        "line": 93,
+        "line": 94,
+        "column": 1
+      }
+    },
+    {
+      "name": "hasConfigDeclarationTag",
+      "description": "Return whether a comment owns @config on a canonical type-like declaration target.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "line": 121,
         "column": 1
       }
     },
@@ -1136,7 +1147,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 91,
+        "line": 113,
         "column": 1
       }
     },
@@ -1147,7 +1158,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 130,
+        "line": 152,
         "column": 1
       }
     }
@@ -1524,6 +1535,12 @@
         "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
       },
       {
+        "fromSymbol": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toSymbol": "hasConfigDeclarationTag",
+        "callExpression": "hasConfigDeclarationTag",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
         "fromSymbol": "configReadmeMetadataRule",
         "toSymbol": "createRule",
         "callExpression": "documentationRuleSupport.createRule",
@@ -1533,6 +1550,12 @@
         "fromSymbol": "src/features/evaluation/domain/rules/createConfigRules.ts",
         "toSymbol": "hasNonEmptyTagValue",
         "callExpression": "documentationRuleSupport.hasNonEmptyTagValue",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "hasConfigDeclarationTag",
+        "toSymbol": "tags",
+        "callExpression": "documentationRuleSupport\n    .tags",
         "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
       },
       {

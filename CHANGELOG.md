@@ -1,5 +1,12 @@
 # @ankhorage/rules-documentation
 
+## 0.3.1
+
+### Patch Changes
+
+- da6d048: Preserve canonical config-root semantics by requiring @config README roots to be type or interface
+  declarations in the canonical config schema.
+
 ## 0.3.0
 
 ### Minor Changes
