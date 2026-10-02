@@ -1,0 +1,1754 @@
+{
+  "packageName": "@ankhorage/rules-documentation",
+  "packageId": "@ankhorage/rules-documentation",
+  "description": "Documentation rule provider for Ankhorage source and generated documentation.",
+  "collaborators": null,
+  "donation": null,
+  "badges": [
+    {
+      "id": "license",
+      "label": "license",
+      "value": "MIT",
+      "color": "2563eb"
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "value": "v0.1.0",
+      "color": "cb3837"
+    },
+    {
+      "id": "runtime",
+      "label": "runtime",
+      "value": "bun",
+      "color": "f59e0b"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "value": "strict",
+      "color": "2563eb"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "prettier",
+      "label": "prettier",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "tests",
+      "label": "tests",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "docs",
+      "label": "paradox",
+      "value": "canonical",
+      "color": "0a7f3f"
+    }
+  ],
+  "usage": {
+    "packageName": "@ankhorage/rules-documentation",
+    "command": "ankh rules-documentation --help"
+  },
+  "usageEntries": [],
+  "exampleCount": 0,
+  "findings": [],
+  "readmeConfig": {
+    "language": "ts",
+    "code": "import { defineParadoxConfig } from '@ankhorage/paradox';\n\nexport default defineParadoxConfig({\n  mode: 'write',\n  docs: {\n    title: '@ankhorage/rules-documentation',\n    description: 'Documentation rule provider for Ankhorage source and generated documentation.',\n  },\n  package: {\n    root: '.',\n    entrypoints: ['src/index.ts'],\n  },\n  output: { dir: './paradox' },\n});",
+    "sourcePath": "paradox.config.ts"
+  },
+  "config": null,
+  "entrypoints": [
+    "src/index.ts"
+  ],
+  "modules": [
+    {
+      "path": "src/constants/documentation.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "DOCUMENTATION_RULE_METADATA"
+      ]
+    },
+    {
+      "path": "src/constants/documentationRuleIds.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "DOCUMENTATION_RULE_IDS"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "createDocumentationRuleSet"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/evaluateDocumentation.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "evaluateDocumentation"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/rules/createCommentRules.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/documentation.ts",
+        "src/constants/documentationRuleIds.ts",
+        "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "createCommentRules"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/rules/createConfigRules.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/documentation.ts",
+        "src/constants/documentationRuleIds.ts",
+        "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "createConfigRules"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/documentationRuleIds.ts",
+        "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "createDescriptionRules"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/documentationRuleIds.ts",
+        "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "createReferenceRules"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/domain/rules/createUsageRules.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/documentation.ts",
+        "src/constants/documentationRuleIds.ts",
+        "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "createUsageRules"
+      ]
+    },
+    {
+      "path": "src/features/evaluation/utils/documentationRuleSupport.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/constants/documentation.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": [
+        "documentationRuleSupport"
+      ]
+    },
+    {
+      "path": "src/index.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/index.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/index.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "createDocumentationRuleSet",
+        "DOCUMENTATION_RULE_METADATA",
+        "DocumentationCommentFact",
+        "DocumentationEvaluationOptions",
+        "DocumentationEvaluationResult",
+        "DocumentationPublicFunctionFact",
+        "DocumentationRuleContext",
+        "DocumentationSecurityReferenceFact",
+        "DocumentationSeeReferenceFact",
+        "DocumentationTagDefinition",
+        "DocumentationTagFact",
+        "DocumentationTagName",
+        "DocumentationTagTarget",
+        "DocumentationTagValueKind",
+        "evaluateDocumentation"
+      ]
+    },
+    {
+      "path": "src/types/documentation.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "DocumentationCommentFact",
+        "DocumentationEvaluationOptions",
+        "DocumentationEvaluationResult",
+        "DocumentationPublicFunctionFact",
+        "DocumentationRuleContext",
+        "DocumentationSecurityReferenceFact",
+        "DocumentationSeeReferenceFact",
+        "DocumentationTagDefinition",
+        "DocumentationTagFact",
+        "DocumentationTagName",
+        "DocumentationTagTarget",
+        "DocumentationTagValueKind"
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "name": "createDocumentationRuleSet",
+      "title": null,
+      "description": "Create the canonical documentation RuleSet without parser, filesystem, or network coupling.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "function",
+      "modulePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "line": 11,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DocumentationRuleContext"
+      ],
+      "signatures": [
+        {
+          "label": "() => RuleSet<DocumentationRuleContext>",
+          "parameters": [],
+          "returnType": "RuleSet<DocumentationRuleContext>",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "DOCUMENTATION_RULE_METADATA",
+      "title": null,
+      "description": "Canonical documentation metadata shared by fact collectors and rules.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "value",
+      "modulePath": "src/constants/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/constants/documentation.ts",
+        "line": 4,
+        "column": 14
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationCommentFact",
+      "title": null,
+      "description": "One normalized documentation comment supplied by a consumer adapter.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 29,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DocumentationTagFact"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "description",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "hasCodeBlock",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "path",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "tags",
+          "kind": "property",
+          "type": "readonly DocumentationTagFact[]",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationEvaluationOptions",
+      "title": null,
+      "description": "Optional generic Rules configuration applied to documentation rules.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 69,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "config",
+          "kind": "property",
+          "type": "RulesConfig | undefined",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationEvaluationResult",
+      "title": null,
+      "description": "Generic Rules result produced by documentation evaluation.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 74,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationPublicFunctionFact",
+      "title": null,
+      "description": "One public function whose description is evaluated independently of parser technology.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 37,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "description",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "name",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "path",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationRuleContext",
+      "title": null,
+      "description": "Portable documentation facts evaluated by the provider.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 60,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DocumentationCommentFact",
+        "DocumentationPublicFunctionFact",
+        "DocumentationSecurityReferenceFact",
+        "DocumentationSeeReferenceFact"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "comments",
+          "kind": "property",
+          "type": "readonly DocumentationCommentFact[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "files",
+          "kind": "property",
+          "type": "readonly string[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "publicFunctions",
+          "kind": "property",
+          "type": "readonly DocumentationPublicFunctionFact[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "securityReferences",
+          "kind": "property",
+          "type": "readonly DocumentationSecurityReferenceFact[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "seeReferences",
+          "kind": "property",
+          "type": "readonly DocumentationSeeReferenceFact[]",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationSecurityReferenceFact",
+      "title": null,
+      "description": "Test-discovery evidence collected by a consumer for one @security reference.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 52,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "colocatedTestExists",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "exactTestNameMatches",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "path",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "reference",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationSeeReferenceFact",
+      "title": null,
+      "description": "Network evidence collected by a consumer for one @see reference.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 44,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "path",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "publicNetworkTarget",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "reachable",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "url",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationTagDefinition",
+      "title": null,
+      "description": "One canonical documentation tag definition used by parsers before evaluation.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 14,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DocumentationTagName",
+        "DocumentationTagTarget",
+        "DocumentationTagValueKind"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "appliesTo",
+          "kind": "property",
+          "type": "readonly DocumentationTagTarget[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "name",
+          "kind": "property",
+          "type": "DocumentationTagName",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "repeatable",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "valueKind",
+          "kind": "property",
+          "type": "DocumentationTagValueKind",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationTagFact",
+      "title": null,
+      "description": "One tag occurrence extracted from a documentation comment.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 22,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DocumentationTagTarget"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "name",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "target",
+          "kind": "property",
+          "type": "DocumentationTagTarget",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "value",
+          "kind": "property",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationTagName",
+      "title": null,
+      "description": "Canonical documentation tag names.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 11,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationTagTarget",
+      "title": null,
+      "description": "Canonical target kinds supported by documentation metadata.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 4,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationTagValueKind",
+      "title": null,
+      "description": "Canonical value shapes supported by documentation metadata.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 7,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "evaluateDocumentation",
+      "title": null,
+      "description": "Evaluate normalized documentation facts through the canonical documentation RuleSet.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "function",
+      "modulePath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+        "line": 11,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "DocumentationEvaluationOptions",
+        "DocumentationRuleContext"
+      ],
+      "signatures": [
+        {
+          "label": "(context: DocumentationRuleContext, options?: DocumentationEvaluationOptions) => import(\"@ankhorage/rules\").RuleEvaluationResult",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "DocumentationRuleContext",
+              "required": true,
+              "description": null
+            },
+            {
+              "name": "options",
+              "type": "DocumentationEvaluationOptions",
+              "required": false,
+              "description": null
+            }
+          ],
+          "returnType": "import(\"@ankhorage/rules\").RuleEvaluationResult",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    }
+  ],
+  "components": [],
+  "sourceFunctions": [
+    {
+      "name": "createDocumentationRuleSet",
+      "description": "Create the canonical documentation RuleSet without parser, filesystem, or network coupling.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "evaluateDocumentation",
+      "description": "Evaluate normalized documentation facts through the canonical documentation RuleSet.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "createCommentRules",
+      "description": "Create comment-shape and tag-vocabulary rules.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "createConfigRules",
+      "description": "Create configuration-documentation ownership and README rules.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "configFileRule",
+      "description": "Require the canonical config schema once configuration documentation is active.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "line": 19,
+        "column": 1
+      }
+    },
+    {
+      "name": "configLocationRule",
+      "description": "Restrict @config to the canonical config schema.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "line": 40,
+        "column": 1
+      }
+    },
+    {
+      "name": "configReadmeUniqueRule",
+      "description": "Require one README-promoted configuration root when configuration docs are active.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "line": 62,
+        "column": 1
+      }
+    },
+    {
+      "name": "configReadmeMetadataRule",
+      "description": "Require title and prose on the README-promoted configuration root.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "line": 91,
+        "column": 1
+      }
+    },
+    {
+      "name": "createDescriptionRules",
+      "description": "Create advisory rules for public documentation prose.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "createReferenceRules",
+      "description": "Create @see and @security reference-validation rules.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "seeValueRule",
+      "description": "Require @see values to be non-empty HTTPS URLs before network evidence is considered.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "line": 13,
+        "column": 1
+      }
+    },
+    {
+      "name": "seeReachableRule",
+      "description": "Require consumer-supplied public-network and reachability evidence for @see URLs.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "line": 38,
+        "column": 1
+      }
+    },
+    {
+      "name": "securityReferenceRule",
+      "description": "Require @security to resolve to exactly named colocated executable-test evidence.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "line": 65,
+        "column": 1
+      }
+    },
+    {
+      "name": "createUsageRules",
+      "description": "Create programmatic and CLI usage documentation rules.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "usageLocationRule",
+      "description": "Restrict @usage to real examples and CLI delivery sources.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "line": 19,
+        "column": 1
+      }
+    },
+    {
+      "name": "usageReadmeUniqueRule",
+      "description": "Require exactly one README-promoted example when programmatic usage is present.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "line": 42,
+        "column": 1
+      }
+    },
+    {
+      "name": "usageReadmeCliRule",
+      "description": "Keep CLI usage out of the programmatic README promotion contract.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "line": 71,
+        "column": 1
+      }
+    },
+    {
+      "name": "usageReadmeMetadataRule",
+      "description": "Require title and prose on the README-promoted usage entry.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "line": 94,
+        "column": 1
+      }
+    },
+    {
+      "name": "createRule",
+      "description": "Build one deterministic provider rule with a fixed default severity.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 23,
+        "column": 1
+      }
+    },
+    {
+      "name": "finding",
+      "description": "Build one portable documentation finding.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 38,
+        "column": 1
+      }
+    },
+    {
+      "name": "tags",
+      "description": "Return all tags with one raw name from a comment.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 55,
+        "column": 1
+      }
+    },
+    {
+      "name": "hasTag",
+      "description": "Return whether a comment contains one raw tag name.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 60,
+        "column": 1
+      }
+    },
+    {
+      "name": "hasNonEmptyTagValue",
+      "description": "Return whether a comment contains one tag with non-empty text.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 65,
+        "column": 1
+      }
+    },
+    {
+      "name": "isExamplePath",
+      "description": "Return whether a portable path belongs to the examples root.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 70,
+        "column": 1
+      }
+    },
+    {
+      "name": "isCliPath",
+      "description": "Return whether a portable path belongs to the CLI source root.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 76,
+        "column": 1
+      }
+    },
+    {
+      "name": "isHttpsUrl",
+      "description": "Validate one @see value without performing I/O.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 82,
+        "column": 1
+      }
+    },
+    {
+      "name": "createCanonicalContext",
+      "description": "Build a complete canonical documentation fact fixture.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/index.test.ts",
+        "line": 65,
+        "column": 1
+      }
+    },
+    {
+      "name": "createInvalidContext",
+      "description": "Build a compact fixture that violates independent documentation rules.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/index.test.ts",
+        "line": 104,
+        "column": 1
+      }
+    }
+  ],
+  "sequenceScenarios": [
+    {
+      "kind": "export",
+      "name": "createDocumentationRuleSet",
+      "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+      "symbolName": "createDocumentationRuleSet",
+      "description": "Create the canonical documentation RuleSet without parser, filesystem, or network coupling.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "evaluateDocumentation",
+      "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+      "symbolName": "evaluateDocumentation",
+      "description": "Evaluate normalized documentation facts through the canonical documentation RuleSet.",
+      "isReadme": false
+    }
+  ],
+  "graphs": {
+    "imports": [
+      {
+        "fromPath": "src/index.test.ts",
+        "toPath": "src/index.ts",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromPath": "src/index.test.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/constants/documentation.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/constants/documentation.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/constants/documentation.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "toPath": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "toPath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "toPath": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "toPath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "toPath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+        "toPath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "toPath": "src/constants/documentation.ts",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "toPath": "src/constants/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createCommentRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "toPath": "src/constants/documentationRuleIds.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createCommentRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createCommentRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "toPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createCommentRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toPath": "src/constants/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toPath": "src/constants/documentationRuleIds.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "toPath": "src/constants/documentationRuleIds.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createDescriptionRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createDescriptionRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "toPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createDescriptionRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toPath": "src/constants/documentationRuleIds.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toPath": "src/constants/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toPath": "src/constants/documentationRuleIds.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      }
+    ],
+    "calls": [
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "evaluateDocumentation",
+        "callExpression": "evaluateDocumentation",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "createCanonicalContext",
+        "callExpression": "createCanonicalContext",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "createInvalidContext",
+        "callExpression": "createInvalidContext",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toSymbol": "createCommentRules",
+        "callExpression": "createCommentRules",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toSymbol": "createUsageRules",
+        "callExpression": "createUsageRules",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toSymbol": "createConfigRules",
+        "callExpression": "createConfigRules",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toSymbol": "createReferenceRules",
+        "callExpression": "createReferenceRules",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toSymbol": "createDescriptionRules",
+        "callExpression": "createDescriptionRules",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toSymbol": "createDocumentationRuleSet",
+        "callExpression": "createDocumentationRuleSet",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toSymbol": "evaluateRules",
+        "callExpression": "evaluateRules",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toSymbol": "evaluateConfiguredRules",
+        "callExpression": "evaluateConfiguredRules",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toSymbol": "createRuleRegistry",
+        "callExpression": "createRuleRegistry",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluate",
+        "toSymbol": "evaluate",
+        "callExpression": "evaluate",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
+      },
+      {
+        "fromSymbol": "hasTag",
+        "toSymbol": "tags",
+        "callExpression": "tags",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
+      },
+      {
+        "fromSymbol": "hasNonEmptyTagValue",
+        "toSymbol": "tags",
+        "callExpression": "tags",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
+      },
+      {
+        "fromSymbol": "createCommentRules",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createCommentRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createCommentRules.ts",
+        "toSymbol": "finding",
+        "callExpression": "documentationRuleSupport.finding",
+        "sourcePath": "src/features/evaluation/domain/rules/createCommentRules.ts"
+      },
+      {
+        "fromSymbol": "createConfigRules",
+        "toSymbol": "configFileRule",
+        "callExpression": "configFileRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "createConfigRules",
+        "toSymbol": "configLocationRule",
+        "callExpression": "configLocationRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "createConfigRules",
+        "toSymbol": "configReadmeUniqueRule",
+        "callExpression": "configReadmeUniqueRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "createConfigRules",
+        "toSymbol": "configReadmeMetadataRule",
+        "callExpression": "configReadmeMetadataRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "configFileRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toSymbol": "hasTag",
+        "callExpression": "documentationRuleSupport.hasTag",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toSymbol": "finding",
+        "callExpression": "documentationRuleSupport.finding",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "configLocationRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "configReadmeUniqueRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "configReadmeMetadataRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createConfigRules.ts",
+        "toSymbol": "hasNonEmptyTagValue",
+        "callExpression": "documentationRuleSupport.hasNonEmptyTagValue",
+        "sourcePath": "src/features/evaluation/domain/rules/createConfigRules.ts"
+      },
+      {
+        "fromSymbol": "createDescriptionRules",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createDescriptionRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createDescriptionRules.ts",
+        "toSymbol": "finding",
+        "callExpression": "documentationRuleSupport.finding",
+        "sourcePath": "src/features/evaluation/domain/rules/createDescriptionRules.ts"
+      },
+      {
+        "fromSymbol": "createReferenceRules",
+        "toSymbol": "seeValueRule",
+        "callExpression": "seeValueRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "createReferenceRules",
+        "toSymbol": "seeReachableRule",
+        "callExpression": "seeReachableRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "createReferenceRules",
+        "toSymbol": "securityReferenceRule",
+        "callExpression": "securityReferenceRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "seeValueRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toSymbol": "tags",
+        "callExpression": "documentationRuleSupport\n          .tags",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toSymbol": "isHttpsUrl",
+        "callExpression": "documentationRuleSupport.isHttpsUrl",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toSymbol": "finding",
+        "callExpression": "documentationRuleSupport.finding",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "seeReachableRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createReferenceRules.ts",
+        "toSymbol": "tags",
+        "callExpression": "documentationRuleSupport.tags",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "securityReferenceRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromSymbol": "createUsageRules",
+        "toSymbol": "usageLocationRule",
+        "callExpression": "usageLocationRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "createUsageRules",
+        "toSymbol": "usageReadmeUniqueRule",
+        "callExpression": "usageReadmeUniqueRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "createUsageRules",
+        "toSymbol": "usageReadmeCliRule",
+        "callExpression": "usageReadmeCliRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "createUsageRules",
+        "toSymbol": "usageReadmeMetadataRule",
+        "callExpression": "usageReadmeMetadataRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "usageLocationRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toSymbol": "hasTag",
+        "callExpression": "documentationRuleSupport.hasTag",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toSymbol": "isExamplePath",
+        "callExpression": "documentationRuleSupport.isExamplePath",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toSymbol": "isCliPath",
+        "callExpression": "documentationRuleSupport.isCliPath",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toSymbol": "finding",
+        "callExpression": "documentationRuleSupport.finding",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "usageReadmeUniqueRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "usageReadmeCliRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "usageReadmeMetadataRule",
+        "toSymbol": "createRule",
+        "callExpression": "documentationRuleSupport.createRule",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.ts",
+        "toSymbol": "hasNonEmptyTagValue",
+        "callExpression": "documentationRuleSupport.hasNonEmptyTagValue",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.ts"
+      }
+    ],
+    "typeReferences": [
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toType": "DocumentationRuleContext",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "createDocumentationRuleSet",
+        "toType": "RuleSet",
+        "sourcePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toType": "DocumentationEvaluationOptions",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toType": "DocumentationRuleContext",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluateDocumentation",
+        "toType": "RuleEvaluationResult",
+        "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationCommentFact",
+        "toType": "DocumentationTagFact",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationEvaluationOptions",
+        "toType": "RulesConfig",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationRuleContext",
+        "toType": "DocumentationCommentFact",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationRuleContext",
+        "toType": "DocumentationPublicFunctionFact",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationRuleContext",
+        "toType": "DocumentationSecurityReferenceFact",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationRuleContext",
+        "toType": "DocumentationSeeReferenceFact",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationTagDefinition",
+        "toType": "DocumentationTagName",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationTagDefinition",
+        "toType": "DocumentationTagTarget",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationTagDefinition",
+        "toType": "DocumentationTagValueKind",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationTagFact",
+        "toType": "DocumentationTagTarget",
+        "sourcePath": "src/types/documentation.ts"
+      }
+    ],
+    "componentComposition": []
+  }
+}

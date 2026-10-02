@@ -1,0 +1,581 @@
+[
+  {
+    "name": "createDocumentationRuleSet",
+    "title": null,
+    "description": "Create the canonical documentation RuleSet without parser, filesystem, or network coupling.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "function",
+    "modulePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+    "sourceLocation": {
+      "filePath": "src/features/evaluation/domain/createDocumentationRuleSet.ts",
+      "line": 11,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DocumentationRuleContext"
+    ],
+    "signatures": [
+      {
+        "label": "() => RuleSet<DocumentationRuleContext>",
+        "parameters": [],
+        "returnType": "RuleSet<DocumentationRuleContext>",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "DOCUMENTATION_RULE_METADATA",
+    "title": null,
+    "description": "Canonical documentation metadata shared by fact collectors and rules.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "value",
+    "modulePath": "src/constants/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/constants/documentation.ts",
+      "line": 4,
+      "column": 14
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationCommentFact",
+    "title": null,
+    "description": "One normalized documentation comment supplied by a consumer adapter.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 29,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DocumentationTagFact"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "description",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "hasCodeBlock",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "path",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "tags",
+        "kind": "property",
+        "type": "readonly DocumentationTagFact[]",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationEvaluationOptions",
+    "title": null,
+    "description": "Optional generic Rules configuration applied to documentation rules.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 69,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "config",
+        "kind": "property",
+        "type": "RulesConfig | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationEvaluationResult",
+    "title": null,
+    "description": "Generic Rules result produced by documentation evaluation.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 74,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationPublicFunctionFact",
+    "title": null,
+    "description": "One public function whose description is evaluated independently of parser technology.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 37,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "description",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "name",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "path",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationRuleContext",
+    "title": null,
+    "description": "Portable documentation facts evaluated by the provider.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 60,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DocumentationCommentFact",
+      "DocumentationPublicFunctionFact",
+      "DocumentationSecurityReferenceFact",
+      "DocumentationSeeReferenceFact"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "comments",
+        "kind": "property",
+        "type": "readonly DocumentationCommentFact[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "files",
+        "kind": "property",
+        "type": "readonly string[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "publicFunctions",
+        "kind": "property",
+        "type": "readonly DocumentationPublicFunctionFact[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "securityReferences",
+        "kind": "property",
+        "type": "readonly DocumentationSecurityReferenceFact[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "seeReferences",
+        "kind": "property",
+        "type": "readonly DocumentationSeeReferenceFact[]",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationSecurityReferenceFact",
+    "title": null,
+    "description": "Test-discovery evidence collected by a consumer for one @security reference.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 52,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "colocatedTestExists",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "exactTestNameMatches",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "path",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "reference",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationSeeReferenceFact",
+    "title": null,
+    "description": "Network evidence collected by a consumer for one @see reference.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 44,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "path",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "publicNetworkTarget",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "reachable",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "url",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationTagDefinition",
+    "title": null,
+    "description": "One canonical documentation tag definition used by parsers before evaluation.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 14,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DocumentationTagName",
+      "DocumentationTagTarget",
+      "DocumentationTagValueKind"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "appliesTo",
+        "kind": "property",
+        "type": "readonly DocumentationTagTarget[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "name",
+        "kind": "property",
+        "type": "DocumentationTagName",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "repeatable",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "valueKind",
+        "kind": "property",
+        "type": "DocumentationTagValueKind",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationTagFact",
+    "title": null,
+    "description": "One tag occurrence extracted from a documentation comment.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 22,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DocumentationTagTarget"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "name",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "target",
+        "kind": "property",
+        "type": "DocumentationTagTarget",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "value",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationTagName",
+    "title": null,
+    "description": "Canonical documentation tag names.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 11,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationTagTarget",
+    "title": null,
+    "description": "Canonical target kinds supported by documentation metadata.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 4,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationTagValueKind",
+    "title": null,
+    "description": "Canonical value shapes supported by documentation metadata.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 7,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "evaluateDocumentation",
+    "title": null,
+    "description": "Evaluate normalized documentation facts through the canonical documentation RuleSet.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "function",
+    "modulePath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+    "sourceLocation": {
+      "filePath": "src/features/evaluation/domain/evaluateDocumentation.ts",
+      "line": 11,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "DocumentationEvaluationOptions",
+      "DocumentationRuleContext"
+    ],
+    "signatures": [
+      {
+        "label": "(context: DocumentationRuleContext, options?: DocumentationEvaluationOptions) => import(\"@ankhorage/rules\").RuleEvaluationResult",
+        "parameters": [
+          {
+            "name": "context",
+            "type": "DocumentationRuleContext",
+            "required": true,
+            "description": null
+          },
+          {
+            "name": "options",
+            "type": "DocumentationEvaluationOptions",
+            "required": false,
+            "description": null
+          }
+        ],
+        "returnType": "import(\"@ankhorage/rules\").RuleEvaluationResult",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  }
+]

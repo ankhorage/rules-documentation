@@ -1,0 +1,56 @@
+graph LR
+  module_src_constants_documentation_ts["src/constants/documentation.ts"]
+  module_src_constants_documentationRuleIds_ts["src/constants/documentationRuleIds.ts"]
+  module_src_features_evaluation_domain_createDocumentationRuleSet_ts["src/features/evaluation/domain/createDocumentationRuleSet.ts"]
+  module_src_features_evaluation_domain_evaluateDocumentation_ts["src/features/evaluation/domain/evaluateDocumentation.ts"]
+  module_src_features_evaluation_domain_rules_createCommentRules_ts["src/features/evaluation/domain/rules/createCommentRules.ts"]
+  module_src_features_evaluation_domain_rules_createConfigRules_ts["src/features/evaluation/domain/rules/createConfigRules.ts"]
+  module_src_features_evaluation_domain_rules_createDescriptionRules_ts["src/features/evaluation/domain/rules/createDescriptionRules.ts"]
+  module_src_features_evaluation_domain_rules_createReferenceRules_ts["src/features/evaluation/domain/rules/createReferenceRules.ts"]
+  module_src_features_evaluation_domain_rules_createUsageRules_ts["src/features/evaluation/domain/rules/createUsageRules.ts"]
+  module_src_features_evaluation_utils_documentationRuleSupport_ts["src/features/evaluation/utils/documentationRuleSupport.ts"]
+  module_src_index_test_ts["src/index.test.ts"]
+  module_src_index_ts["src/index.ts"]
+  module_src_types_documentation_ts["src/types/documentation.ts"]
+  export_createDocumentationRuleSet["createDocumentationRuleSet"]
+  module_src_features_evaluation_domain_createDocumentationRuleSet_ts --> export_createDocumentationRuleSet
+  export_createDocumentationRuleSet -.-> export_DocumentationRuleContext
+  export_DOCUMENTATION_RULE_METADATA["DOCUMENTATION_RULE_METADATA"]
+  module_src_constants_documentation_ts --> export_DOCUMENTATION_RULE_METADATA
+  export_DocumentationCommentFact["DocumentationCommentFact"]
+  module_src_types_documentation_ts --> export_DocumentationCommentFact
+  export_DocumentationCommentFact -.-> export_DocumentationTagFact
+  export_DocumentationEvaluationOptions["DocumentationEvaluationOptions"]
+  module_src_types_documentation_ts --> export_DocumentationEvaluationOptions
+  export_DocumentationEvaluationResult["DocumentationEvaluationResult"]
+  module_src_types_documentation_ts --> export_DocumentationEvaluationResult
+  export_DocumentationPublicFunctionFact["DocumentationPublicFunctionFact"]
+  module_src_types_documentation_ts --> export_DocumentationPublicFunctionFact
+  export_DocumentationRuleContext["DocumentationRuleContext"]
+  module_src_types_documentation_ts --> export_DocumentationRuleContext
+  export_DocumentationRuleContext -.-> export_DocumentationCommentFact
+  export_DocumentationRuleContext -.-> export_DocumentationPublicFunctionFact
+  export_DocumentationRuleContext -.-> export_DocumentationSecurityReferenceFact
+  export_DocumentationRuleContext -.-> export_DocumentationSeeReferenceFact
+  export_DocumentationSecurityReferenceFact["DocumentationSecurityReferenceFact"]
+  module_src_types_documentation_ts --> export_DocumentationSecurityReferenceFact
+  export_DocumentationSeeReferenceFact["DocumentationSeeReferenceFact"]
+  module_src_types_documentation_ts --> export_DocumentationSeeReferenceFact
+  export_DocumentationTagDefinition["DocumentationTagDefinition"]
+  module_src_types_documentation_ts --> export_DocumentationTagDefinition
+  export_DocumentationTagDefinition -.-> export_DocumentationTagName
+  export_DocumentationTagDefinition -.-> export_DocumentationTagTarget
+  export_DocumentationTagDefinition -.-> export_DocumentationTagValueKind
+  export_DocumentationTagFact["DocumentationTagFact"]
+  module_src_types_documentation_ts --> export_DocumentationTagFact
+  export_DocumentationTagFact -.-> export_DocumentationTagTarget
+  export_DocumentationTagName["DocumentationTagName"]
+  module_src_types_documentation_ts --> export_DocumentationTagName
+  export_DocumentationTagTarget["DocumentationTagTarget"]
+  module_src_types_documentation_ts --> export_DocumentationTagTarget
+  export_DocumentationTagValueKind["DocumentationTagValueKind"]
+  module_src_types_documentation_ts --> export_DocumentationTagValueKind
+  export_evaluateDocumentation["evaluateDocumentation"]
+  module_src_features_evaluation_domain_evaluateDocumentation_ts --> export_evaluateDocumentation
+  export_evaluateDocumentation -.-> export_DocumentationEvaluationOptions
+  export_evaluateDocumentation -.-> export_DocumentationRuleContext
