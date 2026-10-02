@@ -1,8 +1,4 @@
-import {
-  createRuleRegistry,
-  evaluateConfiguredRules,
-  evaluateRules,
-} from '@ankhorage/rules';
+import { createRuleRegistry, evaluateConfiguredRules, evaluateRules } from '@ankhorage/rules';
 
 import type {
   DocumentationEvaluationOptions,
