@@ -72,6 +72,9 @@ describe('documentation finding evidence', () => {
     ).toEqual({ line: 44, path: 'src/example.ts' });
   });
 
+});
+
+describe('configuration documentation activation', () => {
   test('rejects config roots on non-type declaration targets', () => {
     const result = evaluateDocumentation({
       ...emptyContext,
