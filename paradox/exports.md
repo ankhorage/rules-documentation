@@ -35,6 +35,7 @@ One normalized documentation comment supplied by a consumer adapter.
 | --- | --- | --- | --- | --- |
 | description | property | `string` | yes |  |
 | hasCodeBlock | property | `boolean` | yes |  |
+| line | property | `number \| undefined` | no |  |
 | path | property | `string` | yes |  |
 | tags | property | `readonly DocumentationTagFact[]` | yes |  |
 
@@ -42,7 +43,7 @@ One normalized documentation comment supplied by a consumer adapter.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:69:1`
+Source: `src/types/documentation.ts:71:1`
 
 Optional generic Rules configuration applied to documentation rules.
 
@@ -56,7 +57,7 @@ Optional generic Rules configuration applied to documentation rules.
 
 Kind: `unknown`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:74:1`
+Source: `src/types/documentation.ts:76:1`
 
 Generic Rules result produced by documentation evaluation.
 
@@ -64,7 +65,7 @@ Generic Rules result produced by documentation evaluation.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:37:1`
+Source: `src/types/documentation.ts:38:1`
 
 One public function whose description is evaluated independently of parser technology.
 
@@ -73,6 +74,7 @@ One public function whose description is evaluated independently of parser techn
 | Name | Kind | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | description | property | `string` | yes |  |
+| line | property | `number \| undefined` | no |  |
 | name | property | `string` | yes |  |
 | path | property | `string` | yes |  |
 
@@ -80,7 +82,7 @@ One public function whose description is evaluated independently of parser techn
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:60:1`
+Source: `src/types/documentation.ts:62:1`
 
 Portable documentation facts evaluated by the provider.
 
@@ -98,7 +100,7 @@ Portable documentation facts evaluated by the provider.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:52:1`
+Source: `src/types/documentation.ts:54:1`
 
 Test-discovery evidence collected by a consumer for one @security reference.
 
@@ -115,7 +117,7 @@ Test-discovery evidence collected by a consumer for one @security reference.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:44:1`
+Source: `src/types/documentation.ts:46:1`
 
 Network evidence collected by a consumer for one @see reference.
 

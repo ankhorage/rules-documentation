@@ -359,6 +359,12 @@
             <td>yes</td>
             <td></td>
           </tr><tr>
+            <td><code>line</code></td>
+            <td>property</td>
+            <td><code>number | undefined</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>path</code></td>
             <td>property</td>
             <td><code>string</code></td>
@@ -376,7 +382,7 @@
   </article><article class="item" id="symbol-documentationevaluationoptions" data-search="DocumentationEvaluationOptions  type src/types/documentation.ts Optional generic Rules configuration applied to documentation rules.">
     <h4>DocumentationEvaluationOptions</h4>
     
-    <p class="muted">type • <code>src/types/documentation.ts:69:1</code></p>
+    <p class="muted">type • <code>src/types/documentation.ts:71:1</code></p>
     <p>Optional generic Rules configuration applied to documentation rules.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -397,7 +403,7 @@
   </article><article class="item" id="symbol-documentationevaluationresult" data-search="DocumentationEvaluationResult  unknown src/types/documentation.ts Generic Rules result produced by documentation evaluation.">
     <h4>DocumentationEvaluationResult</h4>
     
-    <p class="muted">unknown • <code>src/types/documentation.ts:74:1</code></p>
+    <p class="muted">unknown • <code>src/types/documentation.ts:76:1</code></p>
     <p>Generic Rules result produced by documentation evaluation.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -407,7 +413,7 @@
   </article><article class="item" id="symbol-documentationpublicfunctionfact" data-search="DocumentationPublicFunctionFact  type src/types/documentation.ts One public function whose description is evaluated independently of parser technology.">
     <h4>DocumentationPublicFunctionFact</h4>
     
-    <p class="muted">type • <code>src/types/documentation.ts:37:1</code></p>
+    <p class="muted">type • <code>src/types/documentation.ts:38:1</code></p>
     <p>One public function whose description is evaluated independently of parser technology.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -421,6 +427,12 @@
             <td>property</td>
             <td><code>string</code></td>
             <td>yes</td>
+            <td></td>
+          </tr><tr>
+            <td><code>line</code></td>
+            <td>property</td>
+            <td><code>number | undefined</code></td>
+            <td>no</td>
             <td></td>
           </tr><tr>
             <td><code>name</code></td>
@@ -440,7 +452,7 @@
   </article><article class="item" id="symbol-documentationrulecontext" data-search="DocumentationRuleContext  type src/types/documentation.ts Portable documentation facts evaluated by the provider. DocumentationCommentFact DocumentationPublicFunctionFact DocumentationSecurityReferenceFact DocumentationSeeReferenceFact">
     <h4>DocumentationRuleContext</h4>
     
-    <p class="muted">type • <code>src/types/documentation.ts:60:1</code></p>
+    <p class="muted">type • <code>src/types/documentation.ts:62:1</code></p>
     <p>Portable documentation facts evaluated by the provider.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -485,7 +497,7 @@
   </article><article class="item" id="symbol-documentationsecurityreferencefact" data-search="DocumentationSecurityReferenceFact  type src/types/documentation.ts Test-discovery evidence collected by a consumer for one @security reference.">
     <h4>DocumentationSecurityReferenceFact</h4>
     
-    <p class="muted">type • <code>src/types/documentation.ts:52:1</code></p>
+    <p class="muted">type • <code>src/types/documentation.ts:54:1</code></p>
     <p>Test-discovery evidence collected by a consumer for one @security reference.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -524,7 +536,7 @@
   </article><article class="item" id="symbol-documentationseereferencefact" data-search="DocumentationSeeReferenceFact  type src/types/documentation.ts Network evidence collected by a consumer for one @see reference.">
     <h4>DocumentationSeeReferenceFact</h4>
     
-    <p class="muted">type • <code>src/types/documentation.ts:44:1</code></p>
+    <p class="muted">type • <code>src/types/documentation.ts:46:1</code></p>
     <p>Network evidence collected by a consumer for one @see reference.</p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
@@ -1070,12 +1082,12 @@
     
   </article><article class="item" data-search="configReadmeUniqueRule src/features/evaluation/domain/rules/createConfigRules.ts Require one README-promoted configuration root when configuration docs are active.">
     <h3>configReadmeUniqueRule</h3>
-    <p class="muted"><code>src/features/evaluation/domain/rules/createConfigRules.ts:62:1</code></p>
+    <p class="muted"><code>src/features/evaluation/domain/rules/createConfigRules.ts:64:1</code></p>
     <p>Require one README-promoted configuration root when configuration docs are active.</p>
     
   </article><article class="item" data-search="configReadmeMetadataRule src/features/evaluation/domain/rules/createConfigRules.ts Require title and prose on the README-promoted configuration root.">
     <h3>configReadmeMetadataRule</h3>
-    <p class="muted"><code>src/features/evaluation/domain/rules/createConfigRules.ts:91:1</code></p>
+    <p class="muted"><code>src/features/evaluation/domain/rules/createConfigRules.ts:93:1</code></p>
     <p>Require title and prose on the README-promoted configuration root.</p>
     
   </article>
@@ -1110,7 +1122,7 @@
     
   </article><article class="item" data-search="securityReferenceRule src/features/evaluation/domain/rules/createReferenceRules.ts Require @security to resolve to exactly named colocated executable-test evidence.">
     <h3>securityReferenceRule</h3>
-    <p class="muted"><code>src/features/evaluation/domain/rules/createReferenceRules.ts:65:1</code></p>
+    <p class="muted"><code>src/features/evaluation/domain/rules/createReferenceRules.ts:67:1</code></p>
     <p>Require @security to resolve to exactly named colocated executable-test evidence.</p>
     
   </article>
@@ -1130,17 +1142,17 @@
     
   </article><article class="item" data-search="usageReadmeUniqueRule src/features/evaluation/domain/rules/createUsageRules.ts Require exactly one README-promoted example when programmatic usage is present.">
     <h3>usageReadmeUniqueRule</h3>
-    <p class="muted"><code>src/features/evaluation/domain/rules/createUsageRules.ts:42:1</code></p>
+    <p class="muted"><code>src/features/evaluation/domain/rules/createUsageRules.ts:44:1</code></p>
     <p>Require exactly one README-promoted example when programmatic usage is present.</p>
     
   </article><article class="item" data-search="usageReadmeCliRule src/features/evaluation/domain/rules/createUsageRules.ts Keep CLI usage out of the programmatic README promotion contract.">
     <h3>usageReadmeCliRule</h3>
-    <p class="muted"><code>src/features/evaluation/domain/rules/createUsageRules.ts:71:1</code></p>
+    <p class="muted"><code>src/features/evaluation/domain/rules/createUsageRules.ts:73:1</code></p>
     <p>Keep CLI usage out of the programmatic README promotion contract.</p>
     
   </article><article class="item" data-search="usageReadmeMetadataRule src/features/evaluation/domain/rules/createUsageRules.ts Require title and prose on the README-promoted usage entry.">
     <h3>usageReadmeMetadataRule</h3>
-    <p class="muted"><code>src/features/evaluation/domain/rules/createUsageRules.ts:94:1</code></p>
+    <p class="muted"><code>src/features/evaluation/domain/rules/createUsageRules.ts:98:1</code></p>
     <p>Require title and prose on the README-promoted usage entry.</p>
     
   </article>
@@ -1160,32 +1172,32 @@
     
   </article><article class="item" data-search="tags src/features/evaluation/utils/documentationRuleSupport.ts Return all tags with one raw name from a comment.">
     <h3>tags</h3>
-    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:55:1</code></p>
+    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:57:1</code></p>
     <p>Return all tags with one raw name from a comment.</p>
     
   </article><article class="item" data-search="hasTag src/features/evaluation/utils/documentationRuleSupport.ts Return whether a comment contains one raw tag name.">
     <h3>hasTag</h3>
-    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:60:1</code></p>
+    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:62:1</code></p>
     <p>Return whether a comment contains one raw tag name.</p>
     
   </article><article class="item" data-search="hasNonEmptyTagValue src/features/evaluation/utils/documentationRuleSupport.ts Return whether a comment contains one tag with non-empty text.">
     <h3>hasNonEmptyTagValue</h3>
-    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:65:1</code></p>
+    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:67:1</code></p>
     <p>Return whether a comment contains one tag with non-empty text.</p>
     
   </article><article class="item" data-search="isExamplePath src/features/evaluation/utils/documentationRuleSupport.ts Return whether a portable path belongs to the examples root.">
     <h3>isExamplePath</h3>
-    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:70:1</code></p>
+    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:72:1</code></p>
     <p>Return whether a portable path belongs to the examples root.</p>
     
   </article><article class="item" data-search="isCliPath src/features/evaluation/utils/documentationRuleSupport.ts Return whether a portable path belongs to the CLI source root.">
     <h3>isCliPath</h3>
-    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:76:1</code></p>
+    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:78:1</code></p>
     <p>Return whether a portable path belongs to the CLI source root.</p>
     
   </article><article class="item" data-search="isHttpsUrl src/features/evaluation/utils/documentationRuleSupport.ts Validate one @see value without performing I/O.">
     <h3>isHttpsUrl</h3>
-    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:82:1</code></p>
+    <p class="muted"><code>src/features/evaluation/utils/documentationRuleSupport.ts:84:1</code></p>
     <p>Validate one @see value without performing I/O.</p>
     
   </article>
@@ -1195,12 +1207,12 @@
       <h2>src/index.test.ts</h2>
       <article class="item" data-search="createCanonicalContext src/index.test.ts Build a complete canonical documentation fact fixture.">
     <h3>createCanonicalContext</h3>
-    <p class="muted"><code>src/index.test.ts:77:1</code></p>
+    <p class="muted"><code>src/index.test.ts:91:1</code></p>
     <p>Build a complete canonical documentation fact fixture.</p>
     
   </article><article class="item" data-search="createInvalidContext src/index.test.ts Build a compact fixture that violates independent documentation rules.">
     <h3>createInvalidContext</h3>
-    <p class="muted"><code>src/index.test.ts:116:1</code></p>
+    <p class="muted"><code>src/index.test.ts:130:1</code></p>
     <p>Build a compact fixture that violates independent documentation rules.</p>
     
   </article>

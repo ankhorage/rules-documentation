@@ -1,5 +1,12 @@
 # @ankhorage/rules-documentation
 
+## 0.3.0
+
+### Minor Changes
+
+- 898d5b0: Preserve optional source line evidence on documentation facts and propagate it to generic Rules
+  finding source locations.
+
 ## 0.2.0
 
 ### Minor Changes

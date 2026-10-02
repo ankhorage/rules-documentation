@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.0",
+      "value": "v0.3.0",
       "color": "cb3837"
     },
     {
@@ -337,6 +337,13 @@
           "description": null
         },
         {
+          "name": "line",
+          "kind": "property",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "path",
           "kind": "property",
           "type": "string",
@@ -364,7 +371,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 69,
+        "line": 71,
         "column": 1
       },
       "exportPaths": [
@@ -394,7 +401,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 74,
+        "line": 76,
         "column": 1
       },
       "exportPaths": [
@@ -416,7 +423,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 37,
+        "line": 38,
         "column": 1
       },
       "exportPaths": [
@@ -430,6 +437,13 @@
           "kind": "property",
           "type": "string",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "line",
+          "kind": "property",
+          "type": "number | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -460,7 +474,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 60,
+        "line": 62,
         "column": 1
       },
       "exportPaths": [
@@ -523,7 +537,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 52,
+        "line": 54,
         "column": 1
       },
       "exportPaths": [
@@ -574,7 +588,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 44,
+        "line": 46,
         "column": 1
       },
       "exportPaths": [
@@ -902,7 +916,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
-        "line": 62,
+        "line": 64,
         "column": 1
       }
     },
@@ -913,7 +927,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createConfigRules.ts",
-        "line": 91,
+        "line": 93,
         "column": 1
       }
     },
@@ -968,7 +982,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
-        "line": 65,
+        "line": 67,
         "column": 1
       }
     },
@@ -1001,7 +1015,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
-        "line": 42,
+        "line": 44,
         "column": 1
       }
     },
@@ -1012,7 +1026,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
-        "line": 71,
+        "line": 73,
         "column": 1
       }
     },
@@ -1023,7 +1037,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/domain/rules/createUsageRules.ts",
-        "line": 94,
+        "line": 98,
         "column": 1
       }
     },
@@ -1056,7 +1070,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 55,
+        "line": 57,
         "column": 1
       }
     },
@@ -1067,7 +1081,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 60,
+        "line": 62,
         "column": 1
       }
     },
@@ -1078,7 +1092,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 65,
+        "line": 67,
         "column": 1
       }
     },
@@ -1089,7 +1103,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 70,
+        "line": 72,
         "column": 1
       }
     },
@@ -1100,7 +1114,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 76,
+        "line": 78,
         "column": 1
       }
     },
@@ -1111,7 +1125,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 82,
+        "line": 84,
         "column": 1
       }
     },
@@ -1122,7 +1136,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 77,
+        "line": 91,
         "column": 1
       }
     },
@@ -1133,7 +1147,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 116,
+        "line": 130,
         "column": 1
       }
     }
