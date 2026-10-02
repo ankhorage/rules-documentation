@@ -66,9 +66,7 @@ function configReadmeUniqueRule(): Rule<DocumentationRuleContext> {
     DOCUMENTATION_RULE_IDS.configReadmeUnique,
     'Configuration documentation has one README root.',
     ({ comments }) => {
-      const configs = comments.filter((comment) =>
-        documentationRuleSupport.hasTag(comment, 'config'),
-      );
+      const configs = comments.filter(hasConfigDeclarationTag);
       if (configs.length === 0) return [];
       const promoted = configs.filter(
         (comment) =>
@@ -97,7 +95,7 @@ function configReadmeMetadataRule(): Rule<DocumentationRuleContext> {
     ({ comments }) =>
       comments.flatMap((comment) =>
         comment.path === DOCUMENTATION_RULE_METADATA.paths.configSchema &&
-        documentationRuleSupport.hasTag(comment, 'config') &&
+        hasConfigDeclarationTag(comment) &&
         documentationRuleSupport.hasTag(comment, 'readme') &&
         (!documentationRuleSupport.hasNonEmptyTagValue(comment, 'title') ||
           comment.description.trim() === '')
@@ -114,4 +112,14 @@ function configReadmeMetadataRule(): Rule<DocumentationRuleContext> {
           : [],
       ),
   );
+}
+
+
+/*** Return whether a comment owns @config on a canonical type-like declaration target. */
+function hasConfigDeclarationTag(
+  comment: DocumentationRuleContext['comments'][number],
+): boolean {
+  return documentationRuleSupport
+    .tags(comment, 'config')
+    .some((tag) => tag.target === 'interface' || tag.target === 'type');
 }
