@@ -72,6 +72,28 @@ describe('documentation finding evidence', () => {
     ).toEqual({ line: 44, path: 'src/example.ts' });
   });
 
+  test('rejects config roots on non-type declaration targets', () => {
+    const result = evaluateDocumentation({
+      ...emptyContext,
+      comments: [
+        {
+          description: 'Invalid config owner.',
+          hasCodeBlock: false,
+          path: 'src/types/config.ts',
+          tags: [
+            { name: 'config', target: 'symbol' },
+            { name: 'readme', target: 'symbol' },
+            { name: 'title', target: 'symbol', value: 'Configuration' },
+          ],
+        },
+      ],
+      files: ['src/types/config.ts'],
+    });
+    expect(result.findings.map(({ ruleId }) => ruleId)).toContain(
+      'documentation.config.readme.unique',
+    );
+  });
+
   test('reports violations as generic Rules findings', () => {
     const result = evaluateDocumentation(createInvalidContext());
     const ruleIds = result.findings.map(({ ruleId }) => ruleId);
