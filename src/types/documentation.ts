@@ -5,21 +5,11 @@ export type DocumentationTagTarget = 'block' | 'interface' | 'symbol' | 'type';
 
 /*** Canonical value shapes supported by documentation metadata. */
 export type DocumentationTagValueKind =
-  | 'colocated-test-reference'
-  | 'non-empty-text'
-  | 'none'
-  | 'optional-text'
-  | 'public-https-url';
+  'colocated-test-reference' | 'non-empty-text' | 'none' | 'optional-text' | 'public-https-url';
 
 /*** Canonical documentation tag names. */
 export type DocumentationTagName =
-  | 'config'
-  | 'performance'
-  | 'readme'
-  | 'security'
-  | 'see'
-  | 'title'
-  | 'usage';
+  'config' | 'performance' | 'readme' | 'security' | 'see' | 'title' | 'usage';
 
 /*** One canonical documentation tag definition used by parsers before evaluation. */
 export interface DocumentationTagDefinition {
