@@ -86,5 +86,11 @@ export const DOCUMENTATION_RULE_METADATA = {
       valueKind: 'colocated-test-reference',
       appliesTo: ['symbol'],
     },
+    {
+      name: 'performance',
+      repeatable: false,
+      valueKind: 'optional-text',
+      appliesTo: ['block', 'symbol'],
+    },
   ] as const satisfies readonly DocumentationTagDefinition[],
 } as const;
