@@ -36,6 +36,7 @@ describe('documentation rules', () => {
       'title',
       'see',
       'security',
+      'performance',
     ]);
   });
 
@@ -49,9 +50,16 @@ describe('documentation rules', () => {
     expect(DOCUMENTATION_RULE_METADATA.config.path).toBe('src/types/config.ts');
     expect(DOCUMENTATION_RULE_METADATA.see.protocol).toBe('https:');
     expect(DOCUMENTATION_RULE_METADATA.security.exactTestNameRequired).toBe(true);
+    expect(
+      DOCUMENTATION_RULE_METADATA.tags.find(({ name }) => name === 'performance'),
+    ).toMatchObject({
+      appliesTo: ['block', 'symbol'],
+      repeatable: false,
+      valueKind: 'optional-text',
+    });
   });
 
-  test('accepts canonical documentation evidence', () => {
+  test('accepts canonical documentation evidence, including @performance metadata', () => {
     expect(evaluateDocumentation(createCanonicalContext())).toEqual({
       diagnostics: [],
       findings: [],
