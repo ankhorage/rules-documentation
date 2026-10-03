@@ -25,7 +25,7 @@ Canonical documentation metadata shared by fact collectors, renderers, and rules
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:29:1`
+Source: `src/types/documentation.ts:30:1`
 
 One normalized documentation comment supplied by a consumer adapter.
 
@@ -43,7 +43,7 @@ One normalized documentation comment supplied by a consumer adapter.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:71:1`
+Source: `src/types/documentation.ts:72:1`
 
 Optional generic Rules configuration applied to documentation rules.
 
@@ -57,7 +57,7 @@ Optional generic Rules configuration applied to documentation rules.
 
 Kind: `unknown`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:76:1`
+Source: `src/types/documentation.ts:77:1`
 
 Generic Rules result produced by documentation evaluation.
 
@@ -65,7 +65,7 @@ Generic Rules result produced by documentation evaluation.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:38:1`
+Source: `src/types/documentation.ts:39:1`
 
 One public function whose description is evaluated independently of parser technology.
 
@@ -82,7 +82,7 @@ One public function whose description is evaluated independently of parser techn
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:62:1`
+Source: `src/types/documentation.ts:63:1`
 
 Portable documentation facts evaluated by the provider.
 
@@ -100,7 +100,7 @@ Portable documentation facts evaluated by the provider.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:54:1`
+Source: `src/types/documentation.ts:55:1`
 
 Test-discovery evidence collected by a consumer for one @security reference.
 
@@ -117,7 +117,7 @@ Test-discovery evidence collected by a consumer for one @security reference.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:46:1`
+Source: `src/types/documentation.ts:47:1`
 
 Network evidence collected by a consumer for one @see reference.
 
@@ -134,7 +134,7 @@ Network evidence collected by a consumer for one @see reference.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:14:1`
+Source: `src/types/documentation.ts:15:1`
 
 One canonical documentation tag definition used by parsers before evaluation.
 
@@ -151,7 +151,7 @@ One canonical documentation tag definition used by parsers before evaluation.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:22:1`
+Source: `src/types/documentation.ts:23:1`
 
 One tag occurrence extracted from a documentation comment.
 

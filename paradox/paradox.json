@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.3.3",
+      "value": "v0.3.4",
       "color": "cb3837"
     },
     {
@@ -311,7 +311,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 29,
+        "line": 30,
         "column": 1
       },
       "exportPaths": [
@@ -371,7 +371,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 71,
+        "line": 72,
         "column": 1
       },
       "exportPaths": [
@@ -401,7 +401,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 76,
+        "line": 77,
         "column": 1
       },
       "exportPaths": [
@@ -423,7 +423,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 38,
+        "line": 39,
         "column": 1
       },
       "exportPaths": [
@@ -474,7 +474,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 62,
+        "line": 63,
         "column": 1
       },
       "exportPaths": [
@@ -537,7 +537,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 54,
+        "line": 55,
         "column": 1
       },
       "exportPaths": [
@@ -588,7 +588,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 46,
+        "line": 47,
         "column": 1
       },
       "exportPaths": [
@@ -639,7 +639,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 14,
+        "line": 15,
         "column": 1
       },
       "exportPaths": [
@@ -694,7 +694,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 22,
+        "line": 23,
         "column": 1
       },
       "exportPaths": [
@@ -1158,7 +1158,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 170,
+        "line": 194,
         "column": 1
       }
     },
@@ -1169,7 +1169,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 209,
+        "line": 236,
         "column": 1
       }
     }

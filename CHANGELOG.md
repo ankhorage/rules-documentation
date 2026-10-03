@@ -1,5 +1,11 @@
 # @ankhorage/rules-documentation
 
+## 0.3.4
+
+### Patch Changes
+
+- 76e0392: Restore `@performance` as canonical documentation metadata, including bare markers and optional inline notes.
+
 ## 0.3.3
 
 ### Patch Changes
