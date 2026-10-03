@@ -66,21 +66,22 @@ describe('documentation rules', () => {
     });
   });
 
-  test('accepts a bare @performance marker', () => {
-    expect(
-      evaluateDocumentation({
-        ...emptyContext,
-        comments: [
-          {
-            description: 'Keeps a hot path allocation-free.',
-            hasCodeBlock: false,
-            path: 'src/hot-path.ts',
-            tags: [{ name: 'performance', target: 'symbol' }],
-          },
-        ],
-      }).findings,
-    ).toEqual([]);
-  });
+});
+
+test('accepts a bare @performance marker', () => {
+  expect(
+    evaluateDocumentation({
+      ...emptyContext,
+      comments: [
+        {
+          description: 'Keeps a hot path allocation-free.',
+          hasCodeBlock: false,
+          path: 'src/hot-path.ts',
+          tags: [{ name: 'performance', target: 'symbol' }],
+        },
+      ],
+    }).findings,
+  ).toEqual([]);
 });
 
 describe('documentation finding evidence', () => {
