@@ -65,7 +65,6 @@ describe('documentation rules', () => {
       findings: [],
     });
   });
-
 });
 
 test('accepts a bare @performance marker', () => {
