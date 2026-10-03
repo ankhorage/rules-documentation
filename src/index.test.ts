@@ -195,7 +195,7 @@ function createCanonicalContext(): DocumentationRuleContext {
         description: 'Performs the sensitive operation.',
         hasCodeBlock: false,
         path: 'src/sensitive.ts',
-        tags: [{ name: 'security', target: 'symbol', value: 'rejects invalid input' }],
+        tags: [\n          { name: 'performance', target: 'symbol', value: 'Avoid repeated remote calls.' },\n          { name: 'security', target: 'symbol', value: 'rejects invalid input' },\n        ],
       },
     ],
     files: ['examples/basic/index.ts', 'src/types/config.ts', 'src/sensitive.test.ts'],
