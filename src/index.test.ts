@@ -36,6 +36,7 @@ describe('documentation rules', () => {
       'title',
       'see',
       'security',
+      'performance',
     ]);
   });
 
@@ -49,14 +50,37 @@ describe('documentation rules', () => {
     expect(DOCUMENTATION_RULE_METADATA.config.path).toBe('src/types/config.ts');
     expect(DOCUMENTATION_RULE_METADATA.see.protocol).toBe('https:');
     expect(DOCUMENTATION_RULE_METADATA.security.exactTestNameRequired).toBe(true);
+    expect(
+      DOCUMENTATION_RULE_METADATA.tags.find(({ name }) => name === 'performance'),
+    ).toMatchObject({
+      appliesTo: ['block', 'symbol'],
+      repeatable: false,
+      valueKind: 'optional-text',
+    });
   });
 
-  test('accepts canonical documentation evidence', () => {
+  test('accepts canonical documentation evidence, including @performance metadata', () => {
     expect(evaluateDocumentation(createCanonicalContext())).toEqual({
       diagnostics: [],
       findings: [],
     });
   });
+});
+
+test('accepts a bare @performance marker', () => {
+  expect(
+    evaluateDocumentation({
+      ...emptyContext,
+      comments: [
+        {
+          description: 'Keeps a hot path allocation-free.',
+          hasCodeBlock: false,
+          path: 'src/hot-path.ts',
+          tags: [{ name: 'performance', target: 'symbol' }],
+        },
+      ],
+    }).findings,
+  ).toEqual([]);
 });
 
 describe('documentation finding evidence', () => {
@@ -195,7 +219,10 @@ function createCanonicalContext(): DocumentationRuleContext {
         description: 'Performs the sensitive operation.',
         hasCodeBlock: false,
         path: 'src/sensitive.ts',
-        tags: [{ name: 'security', target: 'symbol', value: 'rejects invalid input' }],
+        tags: [
+          { name: 'performance', target: 'symbol', value: 'Avoid repeated remote calls.' },
+          { name: 'security', target: 'symbol', value: 'rejects invalid input' },
+        ],
       },
     ],
     files: ['examples/basic/index.ts', 'src/types/config.ts', 'src/sensitive.test.ts'],
