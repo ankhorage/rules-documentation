@@ -7,6 +7,7 @@ graph LR
   module_src_features_evaluation_domain_rules_createConfigRules_ts["src/features/evaluation/domain/rules/createConfigRules.ts"]
   module_src_features_evaluation_domain_rules_createDescriptionRules_ts["src/features/evaluation/domain/rules/createDescriptionRules.ts"]
   module_src_features_evaluation_domain_rules_createReferenceRules_ts["src/features/evaluation/domain/rules/createReferenceRules.ts"]
+  module_src_features_evaluation_domain_rules_createUsageRules_test_ts["src/features/evaluation/domain/rules/createUsageRules.test.ts"]
   module_src_features_evaluation_domain_rules_createUsageRules_ts["src/features/evaluation/domain/rules/createUsageRules.ts"]
   module_src_features_evaluation_utils_documentationRuleSupport_ts["src/features/evaluation/utils/documentationRuleSupport.ts"]
   module_src_index_test_ts["src/index.test.ts"]
@@ -24,11 +25,14 @@ graph LR
   module_src_types_documentation_ts --> export_DocumentationEvaluationOptions
   export_DocumentationEvaluationResult["DocumentationEvaluationResult"]
   module_src_types_documentation_ts --> export_DocumentationEvaluationResult
+  export_DocumentationPackageFact["DocumentationPackageFact"]
+  module_src_types_documentation_ts --> export_DocumentationPackageFact
   export_DocumentationPublicFunctionFact["DocumentationPublicFunctionFact"]
   module_src_types_documentation_ts --> export_DocumentationPublicFunctionFact
   export_DocumentationRuleContext["DocumentationRuleContext"]
   module_src_types_documentation_ts --> export_DocumentationRuleContext
   export_DocumentationRuleContext -.-> export_DocumentationCommentFact
+  export_DocumentationRuleContext -.-> export_DocumentationPackageFact
   export_DocumentationRuleContext -.-> export_DocumentationPublicFunctionFact
   export_DocumentationRuleContext -.-> export_DocumentationSecurityReferenceFact
   export_DocumentationRuleContext -.-> export_DocumentationSeeReferenceFact

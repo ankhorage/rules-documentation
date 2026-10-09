@@ -7,6 +7,7 @@ graph LR
   module_src_features_evaluation_domain_rules_createConfigRules_ts["src/features/evaluation/domain/rules/createConfigRules.ts"]
   module_src_features_evaluation_domain_rules_createDescriptionRules_ts["src/features/evaluation/domain/rules/createDescriptionRules.ts"]
   module_src_features_evaluation_domain_rules_createReferenceRules_ts["src/features/evaluation/domain/rules/createReferenceRules.ts"]
+  module_src_features_evaluation_domain_rules_createUsageRules_test_ts["src/features/evaluation/domain/rules/createUsageRules.test.ts"]
   module_src_features_evaluation_domain_rules_createUsageRules_ts["src/features/evaluation/domain/rules/createUsageRules.ts"]
   module_src_features_evaluation_utils_documentationRuleSupport_ts["src/features/evaluation/utils/documentationRuleSupport.ts"]
   module_src_index_test_ts["src/index.test.ts"]
@@ -35,6 +36,8 @@ graph LR
   module_src_features_evaluation_domain_rules_createReferenceRules_ts --> module_src_constants_documentationRuleIds_ts
   module_src_features_evaluation_domain_rules_createReferenceRules_ts --> module_src_features_evaluation_utils_documentationRuleSupport_ts
   module_src_features_evaluation_domain_rules_createReferenceRules_ts --> module_src_types_documentation_ts
+  module_src_features_evaluation_domain_rules_createUsageRules_test_ts --> module_src_index_ts
+  module_src_features_evaluation_domain_rules_createUsageRules_test_ts --> module_src_types_documentation_ts
   module_src_features_evaluation_domain_rules_createUsageRules_ts --> module_src_constants_documentation_ts
   module_src_features_evaluation_domain_rules_createUsageRules_ts --> module_src_constants_documentationRuleIds_ts
   module_src_features_evaluation_domain_rules_createUsageRules_ts --> module_src_features_evaluation_utils_documentationRuleSupport_ts

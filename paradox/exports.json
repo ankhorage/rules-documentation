@@ -123,7 +123,7 @@
     "modulePath": "src/types/documentation.ts",
     "sourceLocation": {
       "filePath": "src/types/documentation.ts",
-      "line": 72,
+      "line": 78,
       "column": 1
     },
     "exportPaths": [
@@ -153,7 +153,7 @@
     "modulePath": "src/types/documentation.ts",
     "sourceLocation": {
       "filePath": "src/types/documentation.ts",
-      "line": 77,
+      "line": 83,
       "column": 1
     },
     "exportPaths": [
@@ -162,6 +162,36 @@
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "DocumentationPackageFact",
+    "title": null,
+    "description": "Package publication metadata collected by a consumer from package configuration.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/types/documentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/documentation.ts",
+      "line": 63,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "publishable",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      }
+    ],
     "structuredRows": []
   },
   {
@@ -226,7 +256,7 @@
     "modulePath": "src/types/documentation.ts",
     "sourceLocation": {
       "filePath": "src/types/documentation.ts",
-      "line": 63,
+      "line": 68,
       "column": 1
     },
     "exportPaths": [
@@ -234,6 +264,7 @@
     ],
     "relatedSymbols": [
       "DocumentationCommentFact",
+      "DocumentationPackageFact",
       "DocumentationPublicFunctionFact",
       "DocumentationSecurityReferenceFact",
       "DocumentationSeeReferenceFact"
@@ -251,6 +282,13 @@
         "name": "files",
         "kind": "property",
         "type": "readonly string[]",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "package",
+        "kind": "property",
+        "type": "DocumentationPackageFact",
         "required": true,
         "description": null
       },

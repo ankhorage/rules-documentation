@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.3.4",
+      "value": "v0.4.0",
       "color": "cb3837"
     },
     {
@@ -172,6 +172,15 @@
       ]
     },
     {
+      "path": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/index.ts",
+        "src/types/documentation.ts"
+      ],
+      "exports": []
+    },
+    {
       "path": "src/features/evaluation/domain/rules/createUsageRules.ts",
       "isEntrypoint": false,
       "dependencies": [
@@ -214,6 +223,7 @@
         "DocumentationCommentFact",
         "DocumentationEvaluationOptions",
         "DocumentationEvaluationResult",
+        "DocumentationPackageFact",
         "DocumentationPublicFunctionFact",
         "DocumentationRuleContext",
         "DocumentationSecurityReferenceFact",
@@ -234,6 +244,7 @@
         "DocumentationCommentFact",
         "DocumentationEvaluationOptions",
         "DocumentationEvaluationResult",
+        "DocumentationPackageFact",
         "DocumentationPublicFunctionFact",
         "DocumentationRuleContext",
         "DocumentationSecurityReferenceFact",
@@ -371,7 +382,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 72,
+        "line": 78,
         "column": 1
       },
       "exportPaths": [
@@ -401,7 +412,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 77,
+        "line": 83,
         "column": 1
       },
       "exportPaths": [
@@ -410,6 +421,36 @@
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "DocumentationPackageFact",
+      "title": null,
+      "description": "Package publication metadata collected by a consumer from package configuration.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/types/documentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/documentation.ts",
+        "line": 63,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "publishable",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        }
+      ],
       "structuredRows": []
     },
     {
@@ -474,7 +515,7 @@
       "modulePath": "src/types/documentation.ts",
       "sourceLocation": {
         "filePath": "src/types/documentation.ts",
-        "line": 63,
+        "line": 68,
         "column": 1
       },
       "exportPaths": [
@@ -482,6 +523,7 @@
       ],
       "relatedSymbols": [
         "DocumentationCommentFact",
+        "DocumentationPackageFact",
         "DocumentationPublicFunctionFact",
         "DocumentationSecurityReferenceFact",
         "DocumentationSeeReferenceFact"
@@ -499,6 +541,13 @@
           "name": "files",
           "kind": "property",
           "type": "readonly string[]",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "package",
+          "kind": "property",
+          "type": "DocumentationPackageFact",
           "required": true,
           "description": null
         },
@@ -998,6 +1047,28 @@
       }
     },
     {
+      "name": "findUsageReadmeUniqueFinding",
+      "description": "Find the required programmatic README usage finding.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "line": 101,
+        "column": 1
+      }
+    },
+    {
+      "name": "createReadmeUsageComment",
+      "description": "Create one complete README-promoted programmatic example comment.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "line": 106,
+        "column": 1
+      }
+    },
+    {
       "name": "createUsageRules",
       "description": "Create programmatic and CLI usage documentation rules.",
       "see": [],
@@ -1021,7 +1092,7 @@
     },
     {
       "name": "usageReadmeUniqueRule",
-      "description": "Require exactly one README-promoted example when programmatic usage is present.",
+      "description": "Require one README-promoted programmatic example from every publishable package.",
       "see": [],
       "security": [],
       "sourceLocation": {
@@ -1158,7 +1229,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 194,
+        "line": 196,
         "column": 1
       }
     },
@@ -1169,7 +1240,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 236,
+        "line": 239,
         "column": 1
       }
     }
@@ -1348,6 +1419,16 @@
         "fromPath": "src/features/evaluation/domain/rules/createReferenceRules.ts",
         "toPath": "src/features/evaluation/utils/documentationRuleSupport.ts",
         "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toPath": "src/index.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
+      },
+      {
+        "fromPath": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toPath": "src/types/documentation.ts",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
       },
       {
         "fromPath": "src/features/evaluation/domain/rules/createUsageRules.ts",
@@ -1654,6 +1735,36 @@
         "sourcePath": "src/features/evaluation/domain/rules/createReferenceRules.ts"
       },
       {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toSymbol": "findUsageReadmeUniqueFinding",
+        "callExpression": "findUsageReadmeUniqueFinding",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toSymbol": "evaluateDocumentation",
+        "callExpression": "evaluateDocumentation",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/evaluation/domain/rules/createUsageRules.test.ts",
+        "toSymbol": "createReadmeUsageComment",
+        "callExpression": "createReadmeUsageComment",
+        "sourcePath": "src/features/evaluation/domain/rules/createUsageRules.test.ts"
+      },
+      {
         "fromSymbol": "createUsageRules",
         "toSymbol": "usageLocationRule",
         "callExpression": "usageLocationRule",
@@ -1777,6 +1888,11 @@
       {
         "fromSymbol": "DocumentationRuleContext",
         "toType": "DocumentationCommentFact",
+        "sourcePath": "src/types/documentation.ts"
+      },
+      {
+        "fromSymbol": "DocumentationRuleContext",
+        "toType": "DocumentationPackageFact",
         "sourcePath": "src/types/documentation.ts"
       },
       {

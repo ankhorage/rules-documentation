@@ -1,5 +1,11 @@
 # @ankhorage/rules-documentation
 
+## 0.4.0
+
+### Minor Changes
+
+- bfa6702: Require one README-promoted programmatic example from every publishable package.
+
 ## 0.3.4
 
 ### Patch Changes

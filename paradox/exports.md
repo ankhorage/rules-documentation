@@ -43,7 +43,7 @@ One normalized documentation comment supplied by a consumer adapter.
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:72:1`
+Source: `src/types/documentation.ts:78:1`
 
 Optional generic Rules configuration applied to documentation rules.
 
@@ -57,9 +57,23 @@ Optional generic Rules configuration applied to documentation rules.
 
 Kind: `unknown`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:77:1`
+Source: `src/types/documentation.ts:83:1`
 
 Generic Rules result produced by documentation evaluation.
+
+## DocumentationPackageFact
+
+Kind: `type`
+Module: `src/types/documentation.ts`
+Source: `src/types/documentation.ts:63:1`
+
+Package publication metadata collected by a consumer from package configuration.
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| publishable | property | `boolean` | yes |  |
 
 ## DocumentationPublicFunctionFact
 
@@ -82,7 +96,7 @@ One public function whose description is evaluated independently of parser techn
 
 Kind: `type`
 Module: `src/types/documentation.ts`
-Source: `src/types/documentation.ts:63:1`
+Source: `src/types/documentation.ts:68:1`
 
 Portable documentation facts evaluated by the provider.
 
@@ -92,6 +106,7 @@ Portable documentation facts evaluated by the provider.
 | --- | --- | --- | --- | --- |
 | comments | property | `readonly DocumentationCommentFact[]` | yes |  |
 | files | property | `readonly string[]` | yes |  |
+| package | property | `DocumentationPackageFact` | yes |  |
 | publicFunctions | property | `readonly DocumentationPublicFunctionFact[]` | yes |  |
 | securityReferences | property | `readonly DocumentationSecurityReferenceFact[]` | yes |  |
 | seeReferences | property | `readonly DocumentationSeeReferenceFact[]` | yes |  |
