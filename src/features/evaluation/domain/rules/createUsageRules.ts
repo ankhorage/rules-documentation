@@ -40,18 +40,18 @@ function usageLocationRule(): Rule<DocumentationRuleContext> {
   );
 }
 
-/*** Require exactly one README-promoted example when programmatic usage is present. */
+/*** Require one README-promoted programmatic example from every publishable package. */
 function usageReadmeUniqueRule(): Rule<DocumentationRuleContext> {
   return documentationRuleSupport.createRule(
     DOCUMENTATION_RULE_IDS.usageReadmeUnique,
-    'Programmatic usage has exactly one README-promoted example.',
-    ({ comments }) => {
+    'Publishable packages have exactly one README-promoted programmatic example.',
+    ({ comments, package: packageFact }) => {
+      if (!packageFact.publishable) return [];
       const usage = comments.filter(
         (comment) =>
           documentationRuleSupport.isExamplePath(comment.path) &&
           documentationRuleSupport.hasTag(comment, 'usage'),
       );
-      if (usage.length === 0) return [];
       const promoted = usage.filter((comment) =>
         documentationRuleSupport.hasTag(comment, 'readme'),
       );
@@ -60,9 +60,9 @@ function usageReadmeUniqueRule(): Rule<DocumentationRuleContext> {
         : [
             documentationRuleSupport.finding(
               DOCUMENTATION_RULE_IDS.usageReadmeUnique,
-              'Exactly one example with @usage must also declare @readme.',
+              'A publishable package requires exactly one examples/** declaration with @usage and @readme.',
               DOCUMENTATION_RULE_METADATA.paths.examplesRoot,
-              { actual: promoted.length },
+              { actual: promoted.length, usageCount: usage.length },
             ),
           ];
     },

@@ -59,10 +59,16 @@ export interface DocumentationSecurityReferenceFact {
   readonly reference: string;
 }
 
+/*** Package publication metadata collected by a consumer from package configuration. */
+export interface DocumentationPackageFact {
+  readonly publishable: boolean;
+}
+
 /*** Portable documentation facts evaluated by the provider. */
 export interface DocumentationRuleContext {
   readonly comments: readonly DocumentationCommentFact[];
   readonly files: readonly string[];
+  readonly package: DocumentationPackageFact;
   readonly publicFunctions: readonly DocumentationPublicFunctionFact[];
   readonly securityReferences: readonly DocumentationSecurityReferenceFact[];
   readonly seeReferences: readonly DocumentationSeeReferenceFact[];

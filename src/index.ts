@@ -5,6 +5,7 @@ export type {
   DocumentationCommentFact,
   DocumentationEvaluationOptions,
   DocumentationEvaluationResult,
+  DocumentationPackageFact,
   DocumentationPublicFunctionFact,
   DocumentationRuleContext,
   DocumentationSecurityReferenceFact,
