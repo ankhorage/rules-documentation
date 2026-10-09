@@ -10,6 +10,7 @@ import type {
 const emptyContext: DocumentationRuleContext = {
   comments: [],
   files: [],
+  package: { publishable: true },
   publicFunctions: [],
   securityReferences: [],
   seeReferences: [],
@@ -71,6 +72,7 @@ test('accepts a bare @performance marker', () => {
   expect(
     evaluateDocumentation({
       ...emptyContext,
+      package: { publishable: false },
       comments: [
         {
           description: 'Keeps a hot path allocation-free.',
@@ -226,6 +228,7 @@ function createCanonicalContext(): DocumentationRuleContext {
       },
     ],
     files: ['examples/basic/index.ts', 'src/types/config.ts', 'src/sensitive.test.ts'],
+    package: { publishable: true },
     publicFunctions: [{ description: 'Runs the package.', name: 'run', path: 'src/run.ts' }],
     securityReferences: [canonicalSecurityReference],
     seeReferences: [canonicalSeeReference],
