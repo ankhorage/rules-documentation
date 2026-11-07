@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.4.0",
+      "value": "v0.4.1",
       "color": "cb3837"
     },
     {
@@ -1130,7 +1130,18 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 24,
+        "line": 30,
+        "column": 1
+      }
+    },
+    {
+      "name": "outcome",
+      "description": "Preserve documentation findings while reporting the complete provider-owned rule outcome.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
+        "line": 46,
         "column": 1
       }
     },
@@ -1141,7 +1152,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 39,
+        "line": 51,
         "column": 1
       }
     },
@@ -1152,7 +1163,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 58,
+        "line": 70,
         "column": 1
       }
     },
@@ -1163,7 +1174,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 63,
+        "line": 75,
         "column": 1
       }
     },
@@ -1174,7 +1185,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 68,
+        "line": 80,
         "column": 1
       }
     },
@@ -1185,7 +1196,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 73,
+        "line": 85,
         "column": 1
       }
     },
@@ -1196,7 +1207,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 78,
+        "line": 90,
         "column": 1
       }
     },
@@ -1207,7 +1218,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 84,
+        "line": 96,
         "column": 1
       }
     },
@@ -1218,7 +1229,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/features/evaluation/utils/documentationRuleSupport.ts",
-        "line": 90,
+        "line": 102,
         "column": 1
       }
     },
@@ -1229,7 +1240,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 196,
+        "line": 244,
         "column": 1
       }
     },
@@ -1240,7 +1251,7 @@
       "security": [],
       "sourceLocation": {
         "filePath": "src/index.test.ts",
-        "line": 239,
+        "line": 287,
         "column": 1
       }
     }
@@ -1484,6 +1495,18 @@
       },
       {
         "fromSymbol": "src/index.test.ts",
+        "toSymbol": "evaluateRules",
+        "callExpression": "evaluateRules",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
+        "toSymbol": "createDocumentationRuleSet",
+        "callExpression": "createDocumentationRuleSet",
+        "sourcePath": "src/index.test.ts"
+      },
+      {
+        "fromSymbol": "src/index.test.ts",
         "toSymbol": "createInvalidContext",
         "callExpression": "createInvalidContext",
         "sourcePath": "src/index.test.ts"
@@ -1541,6 +1564,12 @@
         "toSymbol": "createRuleRegistry",
         "callExpression": "createRuleRegistry",
         "sourcePath": "src/features/evaluation/domain/evaluateDocumentation.ts"
+      },
+      {
+        "fromSymbol": "evaluate",
+        "toSymbol": "outcome",
+        "callExpression": "outcome",
+        "sourcePath": "src/features/evaluation/utils/documentationRuleSupport.ts"
       },
       {
         "fromSymbol": "evaluate",

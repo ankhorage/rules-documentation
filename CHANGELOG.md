@@ -1,5 +1,11 @@
 # @ankhorage/rules-documentation
 
+## 0.4.1
+
+### Patch Changes
+
+- ce44b6b: Update the documentation rule provider for composable Rules evaluation results.
+
 ## 0.4.0
 
 ### Minor Changes
