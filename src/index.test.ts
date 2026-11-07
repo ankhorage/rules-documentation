@@ -1,6 +1,11 @@
+import { evaluateRules, type Rule } from '@ankhorage/rules';
 import { describe, expect, test } from 'bun:test';
 
-import { DOCUMENTATION_RULE_METADATA, evaluateDocumentation } from './index.js';
+import {
+  createDocumentationRuleSet,
+  DOCUMENTATION_RULE_METADATA,
+  evaluateDocumentation,
+} from './index.js';
 import type {
   DocumentationRuleContext,
   DocumentationSecurityReferenceFact,
@@ -61,11 +66,54 @@ describe('documentation rules', () => {
   });
 
   test('accepts canonical documentation evidence, including @performance metadata', () => {
-    expect(evaluateDocumentation(createCanonicalContext())).toEqual({
+    expect(evaluateDocumentation(createCanonicalContext())).toMatchObject({
       diagnostics: [],
       findings: [],
     });
   });
+});
+
+test('composes an existing documentation child beneath a capability-gated parent', () => {
+  const parentRule: Rule<DocumentationRuleContext> = {
+    defaultSeverity: 'error',
+    dependencies: [{ ruleId: 'documentation.comment.code-block' }],
+    evaluate: () => ({ findings: [], status: 'PASS' }),
+    identity: { id: 'documentation.composite.fixture', version: '1' },
+    requiredCapabilities: ['documentation.composite.fixture'],
+    summary: 'Fixture composite parent that relies on documentation rule output.',
+  };
+
+  const result = evaluateRules(
+    {
+      ...emptyContext,
+      comments: [
+        {
+          description: 'Invalid embedded source.',
+          hasCodeBlock: true,
+          path: 'src/example.ts',
+          tags: [],
+        },
+      ],
+    },
+    [...createDocumentationRuleSet().rules, parentRule],
+    { selection: { rootRuleIds: ['documentation.composite.fixture'] } },
+  );
+
+  expect(result.plan.nodes.map(({ rule }) => rule.id)).toEqual([
+    'documentation.comment.code-block',
+    'documentation.composite.fixture',
+  ]);
+  expect(result.findings.map(({ ruleId }) => ruleId)).toEqual(['documentation.comment.code-block']);
+  expect(result.results.map(({ rule, status }) => [rule.id, status])).toEqual([
+    ['documentation.comment.code-block', 'FAIL'],
+    ['documentation.composite.fixture', 'INCOMPLETE'],
+  ]);
+  expect(result.diagnostics).toMatchObject([
+    {
+      code: 'missing-capability',
+      ruleId: 'documentation.composite.fixture',
+    },
+  ]);
 });
 
 test('accepts a bare @performance marker', () => {

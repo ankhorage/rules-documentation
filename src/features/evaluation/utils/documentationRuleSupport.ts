@@ -1,4 +1,10 @@
-import type { JsonValue, Rule, RuleFinding, RuleSeverity } from '@ankhorage/rules';
+import type {
+  JsonValue,
+  Rule,
+  RuleEvaluationOutcome,
+  RuleFinding,
+  RuleSeverity,
+} from '@ankhorage/rules';
 
 import { DOCUMENTATION_RULE_METADATA } from '../../../constants/documentation.js';
 import type {
@@ -28,11 +34,17 @@ function createRule(
   defaultSeverity: RuleSeverity = 'error',
 ): Rule<DocumentationRuleContext> {
   return {
-    id,
+    identity: { id, version: '1' },
     summary,
     defaultSeverity,
-    evaluate: ({ context }) => evaluate(context),
+    dependencies: [],
+    evaluate: ({ context }) => outcome(evaluate(context)),
   };
+}
+
+/*** Preserve documentation findings while reporting the complete provider-owned rule outcome. */
+function outcome(findings: readonly RuleFinding[]): RuleEvaluationOutcome {
+  return { findings, status: findings.length === 0 ? 'PASS' : 'FAIL' };
 }
 
 /*** Build one portable documentation finding. */
