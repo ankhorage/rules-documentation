@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "library",
+  "title": "Ankhorage Documentation Rules",
+  "summary": "Provides documentation policy for Ankhorage source comments and generated documentation.",
+  "purpose": "Keep documentation requirements in a reusable rule provider instead of duplicating them in generators and repositories.",
+  "domain": "source and generated documentation policy",
+  "responsibilities": [
+    "Define rules for supported source documentation metadata.",
+    "Evaluate documentation facts through the generic Rules engine.",
+    "Provide consistent findings for source and generated documentation policy."
+  ],
+  "boundaries": [
+    "Does not generate README files or interactive documentation.",
+    "Does not parse arbitrary source languages on behalf of documentation generators.",
+    "Does not own generic rule evaluation."
+  ],
+  "audience": [
+    "Documentation generators and repository validators.",
+    "Maintainers applying consistent Ankhorage documentation policy."
+  ],
+  "useCases": [
+    "Validate source documentation metadata against the supported policy.",
+    "Evaluate documentation facts and receive actionable rule findings.",
+    "Share one documentation policy between validation and generation tooling."
+  ],
+  "architecture": {
+    "role": "Documentation-specific rule provider layered on @ankhorage/rules.",
+    "invariants": [
+      "The package defines policy but does not generate documentation artifacts.",
+      "Generic rule evaluation remains owned by @ankhorage/rules.",
+      "Documentation findings derive from explicit supplied facts."
+    ]
+  }
+}
